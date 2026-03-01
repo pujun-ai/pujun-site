@@ -1,9 +1,49 @@
 const photos = [
-  { cls: 'p1', label: 'Tokyo — Shibuya, 2024', span: true },
-  { cls: 'p2', label: 'SF — Mission District' },
-  { cls: 'p3', label: 'Tokyo — Daikanyama' },
-  { cls: 'p4', label: 'Tokyo — Harajuku' },
-  { cls: 'p5', label: 'Kyoto — Arashiyama' },
+  {
+    id: 'photo-1540959733332-eab4deabeeaf',
+    label: 'Shibuya · Tokyo',
+    wide: true,
+  },
+  {
+    id: 'photo-1501594907352-04cda38ebc29',
+    label: 'San Francisco',
+    wide: false,
+  },
+  {
+    id: 'photo-1588412079929-790b9f593d8e',
+    label: 'Mission District · SF',
+    wide: false,
+  },
+  {
+    id: 'photo-1513407030348-c983a97b98d8',
+    label: 'Tokyo',
+    wide: false,
+  },
+  {
+    id: 'photo-1528360983277-13d401cdc186',
+    label: 'Harajuku · Tokyo',
+    wide: false,
+  },
+  {
+    id: 'photo-1536098561742-ca998e48cbcc',
+    label: 'Tokyo',
+    wide: true,
+  },
+  {
+    id: 'photo-1503899036084-c55cdd92da26',
+    label: 'Daikanyama · Tokyo',
+    wide: false,
+  },
+  {
+    id: 'photo-1493976040374-85c8e12f0c0e',
+    label: 'Kyoto',
+    wide: false,
+  },
+  {
+    id: 'photo-1545569341-9eb8b30979d9',
+    label: 'Arashiyama · Kyoto',
+    wide: false,
+  },
 ]
 
 export default function Photos() {
@@ -15,8 +55,14 @@ export default function Photos() {
       </h2>
       <div className="photo-grid">
         {photos.map((p, i) => (
-          <div className={`photo-cell${p.span ? '' : ''}`} key={i}>
-            <div className={`photo-placeholder ${p.cls}`} style={{ height: '100%' }} />
+          <div className={`photo-cell${p.wide ? ' photo-cell--wide' : ''}`} key={i}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`https://images.unsplash.com/${p.id}?w=1200&q=80&fit=crop`}
+              alt={p.label}
+              className="photo-img"
+              loading="lazy"
+            />
             <div className="photo-label">{p.label}</div>
           </div>
         ))}

@@ -1,18 +1,18 @@
 const roles = [
   {
-    period: '2021 — Present',
+    period: '2021 to Present',
     title: 'CEO & Co-founder',
     company: 'Kintsugi',
     description:
-      'Building the leading AI-native sales tax compliance platform for internet businesses. Grew from 0 to 610+ paying customers, automating compliance across 13,000+ US tax jurisdictions.',
+      'Building the leading AI-native sales tax compliance platform for modern internet businesses, automating compliance across 13,000+ US tax jurisdictions so founders can focus on building, not filing.',
     badge: 'Current',
   },
   {
-    period: 'Pre-2021',
-    title: 'Machine Learning Engineer',
+    period: '2018 to 2021',
+    title: 'First ML Engineer & Senior Engineer',
     company: 'Meta (Facebook)',
     description:
-      'Built and deployed machine learning systems at scale across Meta\'s infrastructure. Applied rigorous ML research to real-world product impact.',
+      'The first machine learning person on the Facebook Stories Team. Built the ML systems that became the ranking backbone for Instagram Stories, Facebook Stories, WhatsApp Stories, and Meta\'s unified story ranking, reaching billions of people daily.',
     badge: 'Previous',
   },
 ]

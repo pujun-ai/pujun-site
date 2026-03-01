@@ -1,5 +1,5 @@
 const links = [
-  { label: 'Email', href: 'mailto:pujun@trykintsugi.com' },
+  { label: 'Email', href: 'mailto:pujun@cs.stanford.edu' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/pujun' },
   { label: 'Twitter / X', href: 'https://twitter.com/pujunb' },
   { label: 'Kintsugi', href: 'https://trykintsugi.com' },

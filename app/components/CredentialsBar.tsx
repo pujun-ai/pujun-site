@@ -13,7 +13,7 @@ export default function CredentialsBar() {
         <div className="cred-item" key={i}>
           <div className="cred-dot" />
           <div className="cred-text">
-            <strong>{c.label}</strong> — {c.sub}
+            <strong>{c.label}</strong>, {c.sub}
           </div>
         </div>
       ))}

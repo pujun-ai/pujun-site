@@ -7,7 +7,7 @@ const talks = [
   {
     year: '2024',
     title: 'Sales Tax Compliance in 13,000 Jurisdictions',
-    venue: 'TED-Style — CPA.com',
+    venue: 'TED-Style at CPA.com',
   },
   {
     year: '2024',

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Pujun Bhatnagar — CEO, Builder, Photographer',
     description:
       'CEO & Co-founder of Kintsugi. Previously ML at Meta. Stanford, MIT, Harvard.',
-    url: 'https://pujun.co',
+    url: 'https://itspujun.com',
     siteName: 'Pujun Bhatnagar',
     type: 'website',
   },

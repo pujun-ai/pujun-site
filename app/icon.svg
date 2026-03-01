@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Dark ceramic background -->
+  <rect width="32" height="32" rx="6" fill="#1C1812"/>
+
+  <!-- Gold crack gradient -->
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#C9A84C" stop-opacity="0.4"/>
+      <stop offset="45%"  stop-color="#F0E0A0" stop-opacity="1"/>
+      <stop offset="70%"  stop-color="#E8C84C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#C9A84C" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main vertical crack -->
+  <path d="M11 0 L14 7 L10 12 L15 20 L12 26 L14 32"
+    stroke="url(#g)" stroke-width="1.4" filter="url(#glow)"/>
+
+  <!-- Secondary crack -->
+  <path d="M20 0 L22 6 L18 11 L21 18 L19 32"
+    stroke="url(#g)" stroke-width="1" filter="url(#glow)"/>
+
+  <!-- Branch cracks -->
+  <path d="M14 7 L20 9 L26 7"
+    stroke="url(#g)" stroke-width="0.7"/>
+  <path d="M15 20 L22 22 L28 19"
+    stroke="url(#g)" stroke-width="0.7"/>
+  <path d="M10 12 L5 15 L7 20"
+    stroke="url(#g)" stroke-width="0.6"/>
+</svg>
