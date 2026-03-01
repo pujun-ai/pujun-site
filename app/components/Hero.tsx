@@ -8,9 +8,11 @@ export default function Hero() {
           <em>Bhatnagar</em>
         </h1>
         <p className="hero-bio">
-          Grew up in India. Represented my country at the International
-          Math &amp; Informatics Olympiad. Now running Kintsugi in San Francisco,
-          and still finding time to wander with a camera, road bike, and take the long way home.
+          I grew up in India. Represented my country at the International Math and Informatics
+          Olympiads. Built machine learning systems used by billions. Now building Kintsugi
+          in San Francisco.
+          <br /><br />
+          I like hard problems. I like beautiful cities. I take the long way home.
         </p>
         <div className="hero-ctas">
           <a href="#about" className="btn-primary">Read more ↓</a>
@@ -74,7 +76,7 @@ export default function Hero() {
             <div className="hero-stat-label">Where I grew up</div>
             <div className="hero-stat hero-stat--text">Stanford · MIT · Harvard</div>
             <div className="hero-stat-label">Where I studied</div>
-            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Hiking · Making Coffee · Collecting Pens · Building Keyboards · Collecting Watches</div>
+            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Making Coffee · Collecting Pens</div>
             <div className="hero-stat-label">How I unwind</div>
           </div>
         </div>

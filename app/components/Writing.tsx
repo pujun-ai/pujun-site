@@ -47,7 +47,7 @@ export default function Writing() {
       <div className="writing-header">
         <div className="section-label">Writing</div>
         <h2 className="section-title">
-          Ideas worth<br /><em>putting down.</em>
+          Ideas at the intersection of<br /><em>law, machine learning, and ambition.</em>
         </h2>
       </div>
       <div className="blog-grid">
