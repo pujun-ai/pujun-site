@@ -5,38 +5,50 @@ export default function About() {
       <div className="about-grid">
         <div className="about-text">
           <h2 className="section-title">
-            Builder.<br /><em>Olympian.</em><br />Photographer.
+            Builder.<br /><em>Nerd.</em><br />Photographer.
           </h2>
           <p>
-            I grew up in India, shaped most by two people: my <strong>mother and my sister</strong>.
-            They taught me how to pay attention, how to be curious, and how to care about the
-            things that are easy to overlook. Everything I&apos;ve done since has been an extension
-            of what I learned from them.
+            I was shaped early by two people: my <strong>mother and my sister</strong>. They taught me
+            to pay attention. To stay curious. To care about the details most people rush past.
           </p>
           <p>
-            My life changed when I got the chance to represent India on the world stage. I came home
-            a <strong>Gold Medalist from the International Mathematical Olympiad</strong> and a
-            <strong> Silver Medalist from the International Olympiad in Informatics</strong>. Competing
-            at that level, surrounded by people who loved hard problems, rewired how I think about
-            everything. Travel did the rest. Years of wandering through <strong>China, Dubai,
-            Thailand, and Malaysia</strong> taught me to see the world in texture and contradiction,
-            and to find something worth photographing in every city I&apos;ve ever landed in.
+            The first time I represented India at the <strong>International Mathematical Olympiad</strong>,
+            something rewired in me. Competing at that level showed me what it feels like to operate at
+            the frontier of human ability. It taught me how to sit with impossibly hard problems without
+            flinching.
           </p>
           <p>
-            At Stanford, my research produced two papers that went on to have an unusual life.
-            One on <strong>Intelligent Tutoring Systems</strong> and another on
-            <strong> Reproducible Machine Learning Research</strong> were bundled together by my
-            research heads, sold to Microsoft, and became part of the intellectual foundation
-            that seeded <strong>OpenAI</strong>.
+            I later returned home with a <strong>Gold Medal in Mathematics</strong> and a{' '}
+            <strong>Silver Medal in Informatics</strong>. More important than the medals was the standard
+            it set. Excellence became normal.
           </p>
           <p>
-            I&apos;m now the CEO and co-founder of <strong>Kintsugi</strong> in San Francisco, where
-            we&apos;re using AI to automate sales tax compliance for modern internet businesses.
-            Before that, I was the <strong>first machine learning person and a Senior Engineer
-            at Facebook</strong> on the Stories Team, where the work became the ML backbone behind
-            Instagram Stories, Facebook Stories, WhatsApp Stories, and Meta&apos;s unified story ranking.
-            Somehow I still find time to wander with a camera, ride a road bike, cook vegetarian food,
-            and take the longest route home.
+            At <strong>Stanford</strong>, I studied Artificial Intelligence and worked on intelligent
+            tutoring systems and reproducible machine learning research. That work was later acquired by
+            Microsoft and contributed to early foundations that helped seed <strong>OpenAI</strong>.
+          </p>
+          <p>
+            After Stanford, I joined <strong>Facebook</strong> as the first machine learning engineer on
+            the Stories team. I built ranking systems that became the backbone behind Instagram Stories,
+            Facebook Stories, WhatsApp Stories, and Meta&apos;s unified story ranking. Billions of people
+            used those systems daily.
+          </p>
+          <p>
+            Today, I am the CEO and co-founder of <strong>Kintsugi</strong>. We are building the
+            AI-native sales tax compliance platform for modern internet businesses. Sales tax is one of
+            the most underestimated operational risks for founders. We automate compliance across
+            13,000+ US jurisdictions so companies can scale without fear.
+          </p>
+          <p>
+            Across math, research, big tech, and startups, the through-line has been the same:
+            Find complex systems. Understand them deeply. Build leverage.
+          </p>
+          <p>
+            When I am not building, I am usually walking through a city with a camera, riding my road
+            bike across the Golden Gate, cooking, or obsessing over mechanical keyboards and fountain pens.
+          </p>
+          <p>
+            I believe in intensity. I believe in craft. I believe in taking the long road.
           </p>
         </div>
         <div className="about-facts">
@@ -82,7 +94,7 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Unwind</span>
-            <span className="fact-value">Photography · Biking · Cooking · Hiking · Making Coffee · Collecting Pens · Building Keyboards · Collecting Watches</span>
+            <span className="fact-value">Photography · Road cycling · Cooking · Making Coffee · Collecting Pens · Building Keyboards</span>
           </div>
         </div>
       </div>

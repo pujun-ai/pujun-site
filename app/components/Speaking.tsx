@@ -28,6 +28,9 @@ export default function Speaking() {
       <h2 className="section-title">
         On stage &amp;<br /><em>on record.</em>
       </h2>
+      <p className="section-subtitle">
+        I speak about AI, compliance, building in regulated markets, and what it takes to go from zero to product-market fit.
+      </p>
       <div className="speaking-list">
         {talks.map((talk, i) => (
           <div className="speaking-item" key={i}>

@@ -50,8 +50,10 @@ export default function Photos() {
   return (
     <section className="photos-section" id="photos">
       <div className="section-label">Photography</div>
-      <h2 className="section-title" style={{ maxWidth: '500px' }}>
-        The world between<br /><em>the meetings.</em>
+      <h2 className="section-title" style={{ maxWidth: '600px' }}>
+        Cities between meetings.<br />
+        <em>Light between deadlines.</em><br />
+        Proof that slowing down sharpens the mind.
       </h2>
       <div className="photo-grid">
         {photos.map((p, i) => (

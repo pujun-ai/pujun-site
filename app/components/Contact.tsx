@@ -10,7 +10,7 @@ export default function Contact() {
       <div>
         <div className="section-label">Contact</div>
         <h2 className="contact-title">
-          Let&apos;s build<br />something<br /><em>worth it.</em>
+          If you are building<br />something difficult,<br />or thinking about it,<br /><em>reach out.</em>
         </h2>
       </div>
       <div className="contact-links">
