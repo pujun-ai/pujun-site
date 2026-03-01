@@ -50,11 +50,19 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Undergrad</span>
-            <span className="fact-value">Georgia Tech</span>
+            <span className="fact-value">Georgia Tech — Computer Engineering</span>
+          </div>
+          <div className="fact-row">
+            <span className="fact-label">Minors</span>
+            <span className="fact-value">CS · Mathematics · Art History · Music Theory</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Graduate</span>
-            <span className="fact-value">Stanford, MS CS (AI) · MIT · Harvard</span>
+            <span className="fact-value">Stanford MS CS (AI)</span>
+          </div>
+          <div className="fact-row">
+            <span className="fact-label">Also Studied</span>
+            <span className="fact-value">Harvard Business School (Did Not Graduate) · MIT (Lecturer)</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Gold Medal</span>
@@ -74,9 +82,19 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Unwind</span>
-            <span className="fact-value">Photography · Biking · Cooking · Hiking</span>
+            <span className="fact-value">Photography · Biking · Cooking · Hiking · Making Coffee · Collecting Pens · Building Keyboards · Collecting Watches</span>
           </div>
         </div>
+      </div>
+
+      <div className="about-mission-image">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/RoxieSF.jpg/800px-RoxieSF.jpg"
+          alt="The Roxie Theater, Mission District, San Francisco"
+          className="mission-img"
+        />
+        <div className="mission-img-label">Roxie Theater · Mission District, SF</div>
       </div>
     </section>
   )
