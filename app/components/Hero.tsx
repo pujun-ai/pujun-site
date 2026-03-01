@@ -72,11 +72,11 @@ export default function Hero() {
           </svg>
 
           <div className="hero-stat-stack">
-            <div className="hero-stat hero-stat--text">India · China · Dubai</div>
-            <div className="hero-stat-label">Where I grew up</div>
+            <div className="hero-stat hero-stat--text">Playing video games and mathematics</div>
+            <div className="hero-stat-label">Childhood pastime</div>
             <div className="hero-stat hero-stat--text">Stanford · MIT · Harvard</div>
             <div className="hero-stat-label">Where I studied</div>
-            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Making Coffee · Collecting Pens</div>
+            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Making Coffee</div>
             <div className="hero-stat-label">How I unwind</div>
           </div>
         </div>

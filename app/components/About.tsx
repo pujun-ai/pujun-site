@@ -99,15 +99,6 @@ export default function About() {
         </div>
       </div>
 
-      <div className="about-mission-image">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/RoxieSF.jpg/800px-RoxieSF.jpg"
-          alt="The Roxie Theater, Mission District, San Francisco"
-          className="mission-img"
-        />
-        <div className="mission-img-label">Roxie Theater · Mission District, SF</div>
-      </div>
     </section>
   )
 }
