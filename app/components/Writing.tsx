@@ -1,5 +1,21 @@
 const posts = [
   {
+    tag: 'Research',
+    title: 'Intelligent Tutoring Systems',
+    excerpt:
+      'Stanford research on adaptive learning systems that personalize instruction using machine learning. This work, along with a companion paper, was acquired by Microsoft and became part of the intellectual foundation that seeded OpenAI.',
+    date: 'Stanford',
+    read: 'Research Paper',
+  },
+  {
+    tag: 'Research',
+    title: 'Reproducible Machine Learning Research',
+    excerpt:
+      'A framework for making machine learning experiments reliably reproducible across environments and teams. Bundled with the tutoring systems research, sold to Microsoft, and contributed to the origins of OpenAI.',
+    date: 'Stanford',
+    read: 'Research Paper',
+  },
+  {
     tag: 'Startups',
     title: 'Why Sales Tax is the Most Underestimated Risk for SaaS Companies',
     excerpt:

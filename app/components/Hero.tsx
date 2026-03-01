@@ -75,7 +75,7 @@ export default function Hero() {
             <div className="hero-stat-label">Where I grew up</div>
             <div className="hero-stat hero-stat--text">Stanford · MIT · Harvard</div>
             <div className="hero-stat-label">Where I studied</div>
-            <div className="hero-stat hero-stat--text">Photography · Biking · Hiking</div>
+            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Hiking</div>
             <div className="hero-stat-label">How I unwind</div>
           </div>
         </div>
