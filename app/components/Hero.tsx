@@ -72,12 +72,18 @@ export default function Hero() {
           </svg>
 
           <div className="hero-stat-stack">
-            <div className="hero-stat hero-stat--text">Video games</div>
-            <div className="hero-stat-label">Childhood pastime</div>
-            <div className="hero-stat hero-stat--text">Stanford · MIT · Harvard</div>
-            <div className="hero-stat-label">Where I studied</div>
-            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Making Coffee</div>
-            <div className="hero-stat-label">How I unwind</div>
+            <div className="hero-stat-col">
+              <div className="hero-stat-label">Childhood pastime</div>
+              <div className="hero-stat hero-stat--text">Video games</div>
+            </div>
+            <div className="hero-stat-col">
+              <div className="hero-stat-label">Where I studied</div>
+              <div className="hero-stat hero-stat--text">Stanford · MIT · Harvard</div>
+            </div>
+            <div className="hero-stat-col">
+              <div className="hero-stat-label">How I unwind</div>
+              <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Making Coffee</div>
+            </div>
           </div>
         </div>
       </div>
