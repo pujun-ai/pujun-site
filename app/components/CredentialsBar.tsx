@@ -2,9 +2,9 @@ const creds = [
   { label: 'Kintsugi', sub: 'CEO & Co-founder' },
   { label: 'Meta', sub: 'Machine Learning' },
   { label: 'Stanford', sub: 'MS Computer Science, AI' },
-  { label: 'Georgia Tech', sub: 'Undergraduate' },
-  { label: 'MIT', sub: 'Mathematics' },
-  { label: 'Harvard', sub: 'Computer Science' },
+  { label: 'Georgia Tech', sub: 'BS, Computer Engineering' },
+  { label: 'MIT', sub: 'Lecturer' },
+  { label: 'Harvard Business School', sub: 'Did Not Graduate' },
 ]
 
 export default function CredentialsBar() {

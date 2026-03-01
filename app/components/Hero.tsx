@@ -14,7 +14,6 @@ export default function Hero() {
         </p>
         <div className="hero-ctas">
           <a href="#about" className="btn-primary">Read more ↓</a>
-          <a href="#contact" className="btn-secondary">Get in touch</a>
         </div>
       </div>
 
@@ -75,7 +74,7 @@ export default function Hero() {
             <div className="hero-stat-label">Where I grew up</div>
             <div className="hero-stat hero-stat--text">Stanford · MIT · Harvard</div>
             <div className="hero-stat-label">Where I studied</div>
-            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Hiking</div>
+            <div className="hero-stat hero-stat--text">Photography · Biking · Cooking · Hiking · Making Coffee · Collecting Pens · Building Keyboards · Collecting Watches</div>
             <div className="hero-stat-label">How I unwind</div>
           </div>
         </div>
