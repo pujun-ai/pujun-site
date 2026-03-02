@@ -1,21 +1,86 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+interface Crack {
+  d: string
+  w: number      // strokeWidth
+  cls: string    // crack-main | crack-branch | crack-hair
+  delay: string  // CSS animation-delay value
+}
+
+/**
+ * Generate random kintsugi cracks radiating outward from the photo circle.
+ * Circle center (300,300), radius 150 in the 600×600 SVG viewBox.
+ * An SVG mask prevents any path from appearing inside the circle itself.
+ */
+function generateCracks(): Crack[] {
+  const cx = 300, cy = 300, r = 153
+  const cracks: Crack[] = []
+
+  for (let i = 0; i < 26; i++) {
+    const angle = Math.random() * Math.PI * 2
+    const sx = cx + r * Math.cos(angle)
+    const sy = cy + r * Math.sin(angle)
+    const len = 55 + Math.random() * 195
+    const segs = 2 + Math.floor(Math.random() * 3)
+
+    let x = sx, y = sy
+    let d = `M${x.toFixed(1)},${y.toFixed(1)}`
+    for (let s = 0; s < segs; s++) {
+      const sl = (len / segs) * (0.6 + Math.random() * 0.8)
+      const drift = (Math.random() - 0.5) * 0.9
+      x += sl * Math.cos(angle + drift)
+      y += sl * Math.sin(angle + drift)
+      d += ` L${x.toFixed(1)},${y.toFixed(1)}`
+    }
+
+    let cls: string, w: number, delay: string
+    if (i < 7) {
+      cls = 'crack crack-main'
+      w = 1.5 + Math.random() * 1.5
+      delay = '0s'
+    } else if (i < 18) {
+      cls = 'crack crack-branch'
+      w = 0.8 + Math.random() * 0.9
+      delay = `${(Math.random() * 0.25).toFixed(2)}s`
+    } else {
+      cls = 'crack crack-hair'
+      w = 0.4 + Math.random() * 0.5
+      delay = `${(0.2 + Math.random() * 0.5).toFixed(2)}s`
+    }
+
+    cracks.push({ d, w, cls, delay })
+  }
+
+  return cracks
+}
 
 export default function Hero() {
   const photoOuterRef = useRef<HTMLDivElement>(null)
+  const [{ gen, cracks }, setTick] = useState(() => ({
+    gen: 0,
+    cracks: generateCracks(),
+  }))
 
+  // Toggle kintsugi-active when section enters viewport
   useEffect(() => {
     const el = photoOuterRef.current
     if (!el) return
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        el.classList.toggle('kintsugi-active', entry.isIntersecting)
-      },
+      ([entry]) => { el.classList.toggle('kintsugi-active', entry.isIntersecting) },
       { threshold: 0.3 }
     )
     observer.observe(el)
     return () => observer.disconnect()
+  }, [])
+
+  // Regenerate cracks every 5 s to sync with animation cycle
+  useEffect(() => {
+    const id = setInterval(
+      () => setTick(prev => ({ gen: prev.gen + 1, cracks: generateCracks() })),
+      5000
+    )
+    return () => clearInterval(id)
   }, [])
 
   return (
@@ -39,65 +104,53 @@ export default function Hero() {
       </div>
 
       <div className="hero-right">
-        {/* Outer wrapper — reference for IntersectionObserver & fact card positioning */}
         <div className="hero-photo-outer" ref={photoOuterRef}>
 
-          {/* Kintsugi crack SVG — lives OUTSIDE the circle so lines bleed into the page background */}
+          {/* Crack SVG — outside and behind the circle; mask keeps cracks out of the photo area */}
           <svg
             className="hero-crack-bg"
             viewBox="0 0 600 600"
             xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid meet"
           >
-              <defs>
-                <linearGradient id="goldCrack" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%"   stopColor="#C9A84C" stopOpacity="0" />
-                  <stop offset="35%"  stopColor="#F0E0A0" stopOpacity="1" />
-                  <stop offset="60%"  stopColor="#E8C84C" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#C9A84C" stopOpacity="0" />
-                </linearGradient>
-                <filter id="goldGlow">
-                  <feGaussianBlur stdDeviation="2.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
+            <defs>
+              <linearGradient id="goldCrack" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stopColor="#C9A84C" stopOpacity="0" />
+                <stop offset="35%"  stopColor="#F0E0A0" stopOpacity="1" />
+                <stop offset="60%"  stopColor="#E8C84C" stopOpacity="1" />
+                <stop offset="100%" stopColor="#C9A84C" stopOpacity="0" />
+              </linearGradient>
+              <filter id="goldGlow">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              {/* Punches out the circle — no crack lines can appear inside the photo */}
+              <mask id="noCircle">
+                <rect x="0" y="0" width="600" height="600" fill="white" />
+                <circle cx="300" cy="300" r="150" fill="black" />
+              </mask>
+            </defs>
 
-              {/* Main cracks — run along the far left and far right edges of the frame.
-                  Shard clip-paths match these paths so the pixel-split avoids the face. */}
-              <path className="crack crack-main crack-1" pathLength="1"
-                d="M72,0 L90,120 L65,200 L88,320 L70,450 L80,620"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="2.5" filter="url(#goldGlow)" />
-              <path className="crack crack-main crack-2" pathLength="1"
-                d="M510,0 L488,120 L514,200 L492,320 L516,450 L500,620"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="2" filter="url(#goldGlow)" />
+            <g mask="url(#noCircle)">
+              {cracks.map((c, i) => (
+                <path
+                  key={`${gen}-${i}`}
+                  className={c.cls}
+                  pathLength="1"
+                  d={c.d}
+                  fill="none"
+                  stroke="url(#goldCrack)"
+                  strokeWidth={c.w}
+                  filter={c.cls.includes('hair') ? undefined : 'url(#goldGlow)'}
+                  style={{ animationDelay: c.delay }}
+                />
+              ))}
+            </g>
+          </svg>
 
-              {/* Bridge cracks — span the face horizontally (visual gold lines only, no shard split) */}
-              <path className="crack crack-branch crack-3" pathLength="1"
-                d="M90,120 L200,140 L300,120 L400,140 L488,120"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="1.4" filter="url(#goldGlow)" />
-              <path className="crack crack-branch crack-4" pathLength="1"
-                d="M88,320 L200,340 L310,325 L420,335 L492,320"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="1.6" filter="url(#goldGlow)" />
-
-              {/* Corner hairlines — reaching the circle boundary at edges */}
-              <path className="crack crack-hair crack-5" pathLength="1"
-                d="M510,0 L560,50 L600,30"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="1.2" />
-              <path className="crack crack-hair crack-6" pathLength="1"
-                d="M65,200 L30,220 L0,250"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="1.2" />
-              <path className="crack crack-hair crack-7" pathLength="1"
-                d="M70,450 L30,470 L0,500"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
-              <path className="crack crack-hair crack-8" pathLength="1"
-                d="M516,450 L560,480 L600,510"
-                fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
-            </svg>
-
-          {/* Circle frame — clips photo + shards to circle; sits above the crack bg */}
+          {/* Photo circle — stays intact throughout the animation */}
           <div className="hero-photo-circle">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -105,14 +158,9 @@ export default function Hero() {
               alt="Pujun Bhatnagar"
               className="hero-photo"
             />
-
-            {/* Photo shards — visible during animation, slide apart on break */}
-            <div className="shard shard-left"  style={{ backgroundImage: "url('/profile.jpg')" }} />
-            <div className="shard shard-mid"   style={{ backgroundImage: "url('/profile.jpg')" }} />
-            <div className="shard shard-right" style={{ backgroundImage: "url('/profile.jpg')" }} />
           </div>
 
-          {/* Facts revealed by the cracks — positioned over the circle */}
+          {/* Fact cards revealed when cracks animate in */}
           <div className="kf kf-1">
             <span className="kf-label">Childhood pastime</span>
             <span className="kf-value">Video games</span>
