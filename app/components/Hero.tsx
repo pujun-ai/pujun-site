@@ -39,10 +39,10 @@ export default function Hero() {
       </div>
 
       <div className="hero-right">
-        {/* Outer wrapper — reference for IntersectionObserver & fact positioning */}
+        {/* Outer wrapper — reference for IntersectionObserver & fact card positioning */}
         <div className="hero-photo-outer" ref={photoOuterRef}>
 
-          {/* Circular photo + cracks (overflow hidden clips to circle) */}
+          {/* Circle frame — clips photo + shards + cracks to circle boundary */}
           <div className="hero-photo-circle">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -51,7 +51,12 @@ export default function Hero() {
               className="hero-photo"
             />
 
-            {/* Kintsugi crack SVG — draws in via stroke-dashoffset animation */}
+            {/* Photo shards — visible during animation, slide apart on break */}
+            <div className="shard shard-left"  style={{ backgroundImage: "url('/profile.jpg')" }} />
+            <div className="shard shard-mid"   style={{ backgroundImage: "url('/profile.jpg')" }} />
+            <div className="shard shard-right" style={{ backgroundImage: "url('/profile.jpg')" }} />
+
+            {/* Kintsugi crack SVG — all paths reach the circle boundary */}
             <svg
               className="hero-crack-overlay"
               viewBox="0 0 600 600"
@@ -74,34 +79,34 @@ export default function Hero() {
                 </filter>
               </defs>
 
-              {/* Main vertical cracks */}
+              {/* Main cracks — both extend fully to circle boundary */}
               <path className="crack crack-main crack-1" pathLength="1"
-                d="M120 0 L180 120 L140 171 L210 291 L170 360 L230 480 L200 600"
+                d="M120,0 L180,120 L140,171 L210,291 L170,360 L230,480 L200,600"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="2.5" filter="url(#goldGlow)" />
               <path className="crack crack-main crack-2" pathLength="1"
-                d="M380 0 L420 69 L360 137 L400 223 L370 300 L440 394 L400 514"
+                d="M380,0 L420,69 L360,137 L400,223 L370,300 L440,394 L400,610"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="2" filter="url(#goldGlow)" />
 
-              {/* Branch cracks */}
+              {/* Branch cracks — extended to right boundary */}
               <path className="crack crack-branch crack-3" pathLength="1"
-                d="M180 120 L280 154 L340 129 L420 189"
+                d="M180,120 L280,154 L340,129 L420,189 L599,323"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.4" filter="url(#goldGlow)" />
               <path className="crack crack-branch crack-4" pathLength="1"
-                d="M210 291 L310 309 L380 274 L480 326 L520 291"
+                d="M210,291 L310,309 L380,274 L480,326 L520,291 L591,229"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.6" filter="url(#goldGlow)" />
 
-              {/* Hairline details */}
+              {/* Hairline cracks — all extended to circle edge */}
               <path className="crack crack-hair crack-5" pathLength="1"
-                d="M420 69 L500 86 L560 60"
+                d="M420,69 L500,86 L560,60"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.2" />
               <path className="crack crack-hair crack-6" pathLength="1"
-                d="M140 171 L80 223 L110 283"
+                d="M140,171 L80,230 L0,300"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.2" />
               <path className="crack crack-hair crack-7" pathLength="1"
-                d="M170 360 L110 386 L130 446"
+                d="M170,360 L110,386 L130,446 L172,572"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
               <path className="crack crack-hair crack-8" pathLength="1"
-                d="M370 300 L310 334 L330 394"
+                d="M370,300 L310,334 L330,394 L394,586"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
             </svg>
           </div>
@@ -113,7 +118,7 @@ export default function Hero() {
           </div>
           <div className="kf kf-2">
             <span className="kf-label">Where I studied</span>
-            <span className="kf-value">Stanford · MIT · Harvard</span>
+            <span className="kf-value">Georgia Tech · Stanford · MIT · Harvard</span>
           </div>
           <div className="kf kf-3">
             <span className="kf-label">How I unwind</span>
@@ -130,7 +135,7 @@ export default function Hero() {
         </div>
         <div className="hero-stat-col">
           <div className="hero-stat-label">Where I studied</div>
-          <div className="hero-stat-value">Stanford · MIT · Harvard</div>
+          <div className="hero-stat-value">Georgia Tech · Stanford · MIT · Harvard</div>
         </div>
         <div className="hero-stat-col">
           <div className="hero-stat-label">How I unwind</div>

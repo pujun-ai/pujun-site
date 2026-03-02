@@ -272,8 +272,46 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: calc(50% + 7px) top;
   opacity: 0.92;
+}
+
+/* ─── PHOTO SHARDS ──────────────────────────────────────────────────────── */
+/* Three divs that tile the full photo via background-image + clip-path.     */
+/* During animation they slide apart to show cracks, then reassemble.        */
+.shard {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: calc(50% + 7px) top;
+  opacity: 0;
+}
+
+/* Clip-path polygons derived from the two main crack paths (% of 600px):
+   Left crack:  20%,0 → 30%,20 → 23.3%,28.5 → 35%,48.5 → 28.3%,60 → 38.3%,80 → 33.3%,100
+   Right crack: 63.3%,0 → 70%,11.5 → 60%,22.8 → 66.7%,37.2 → 61.7%,50 → 73.3%,65.7 → 66.7%,101.7 */
+.shard-left {
+  clip-path: polygon(
+    0% 0%, 20% 0%,
+    30% 20%, 23.3% 28.5%, 35% 48.5%, 28.3% 60%, 38.3% 80%, 33.3% 100%,
+    0% 100%
+  );
+}
+
+.shard-mid {
+  clip-path: polygon(
+    20% 0%, 63.3% 0%,
+    70% 11.5%, 60% 22.8%, 66.7% 37.2%, 61.7% 50%, 73.3% 65.7%, 66.7% 101.7%,
+    33.3% 100%,
+    38.3% 80%, 28.3% 60%, 35% 48.5%, 23.3% 28.5%, 30% 20%
+  );
+}
+
+.shard-right {
+  clip-path: polygon(
+    63.3% 0%, 100% 0%, 100% 100%, 66.7% 101.7%,
+    73.3% 65.7%, 61.7% 50%, 66.7% 37.2%, 60% 22.8%, 70% 11.5%
+  );
 }
 
 .hero-crack-overlay {
@@ -367,12 +405,32 @@ nav.scrolled {
   100% { opacity: 0; transform: translateY(-4px); }
 }
 
-@keyframes kintsugiPhotoShift {
-  0%   { opacity: 0.92; }
-  44%  { opacity: 0.65; }
-  80%  { opacity: 0.65; }
-  95%  { opacity: 0.92; }
-  100% { opacity: 0.92; }
+/* Shard separation — left slides left, mid slides up, right slides right */
+@keyframes shardLeft {
+  0%   { transform: translate(0, 0); }
+  44%  { transform: translate(0, 0); }
+  56%  { transform: translate(-10px, 2px); }
+  72%  { transform: translate(-10px, 2px); }
+  86%  { transform: translate(0, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes shardMid {
+  0%   { transform: translate(0, 0); }
+  44%  { transform: translate(0, 0); }
+  56%  { transform: translate(0, -8px); }
+  72%  { transform: translate(0, -8px); }
+  86%  { transform: translate(0, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes shardRight {
+  0%   { transform: translate(0, 0); }
+  44%  { transform: translate(0, 0); }
+  56%  { transform: translate(10px, -2px); }
+  72%  { transform: translate(10px, -2px); }
+  86%  { transform: translate(0, 0); }
+  100% { transform: translate(0, 0); }
 }
 
 @keyframes kintsugiRing {
@@ -404,9 +462,13 @@ nav.scrolled {
 .kintsugi-active .kf-2 { animation-delay: 0.15s; }
 .kintsugi-active .kf-3 { animation-delay: 0.3s; }
 
-.kintsugi-active .hero-photo {
-  animation: kintsugiPhotoShift 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
+/* Hide base img during animation; shards take over */
+.kintsugi-active .hero-photo { opacity: 0; }
+.kintsugi-active .shard { opacity: 1; }
+
+.kintsugi-active .shard-left  { animation: shardLeft  5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.kintsugi-active .shard-mid   { animation: shardMid   5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.kintsugi-active .shard-right { animation: shardRight 5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
 .kintsugi-active .hero-photo-circle {
   animation: kintsugiRing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
