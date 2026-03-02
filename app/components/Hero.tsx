@@ -79,34 +79,35 @@ export default function Hero() {
                 </filter>
               </defs>
 
-              {/* Main cracks — both extend fully to circle boundary */}
+              {/* Main cracks — run along the far left and far right edges of the frame.
+                  Shard clip-paths match these paths so the pixel-split avoids the face. */}
               <path className="crack crack-main crack-1" pathLength="1"
-                d="M120,0 L180,120 L140,171 L210,291 L170,360 L230,480 L200,600"
+                d="M72,0 L90,120 L65,200 L88,320 L70,450 L80,620"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="2.5" filter="url(#goldGlow)" />
               <path className="crack crack-main crack-2" pathLength="1"
-                d="M380,0 L420,69 L360,137 L400,223 L370,300 L440,394 L400,610"
+                d="M510,0 L488,120 L514,200 L492,320 L516,450 L500,620"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="2" filter="url(#goldGlow)" />
 
-              {/* Branch cracks — extended to right boundary */}
+              {/* Bridge cracks — span the face horizontally (visual gold lines only, no shard split) */}
               <path className="crack crack-branch crack-3" pathLength="1"
-                d="M180,120 L280,154 L340,129 L420,189 L599,323"
+                d="M90,120 L200,140 L300,120 L400,140 L488,120"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.4" filter="url(#goldGlow)" />
               <path className="crack crack-branch crack-4" pathLength="1"
-                d="M210,291 L310,309 L380,274 L480,326 L520,291 L591,229"
+                d="M88,320 L200,340 L310,325 L420,335 L492,320"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.6" filter="url(#goldGlow)" />
 
-              {/* Hairline cracks — all extended to circle edge */}
+              {/* Corner hairlines — reaching the circle boundary at edges */}
               <path className="crack crack-hair crack-5" pathLength="1"
-                d="M420,69 L500,86 L560,60"
+                d="M510,0 L560,50 L600,30"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.2" />
               <path className="crack crack-hair crack-6" pathLength="1"
-                d="M140,171 L80,230 L0,300"
+                d="M65,200 L30,220 L0,250"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="1.2" />
               <path className="crack crack-hair crack-7" pathLength="1"
-                d="M170,360 L110,386 L130,446 L172,572"
+                d="M70,450 L30,470 L0,500"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
               <path className="crack crack-hair crack-8" pathLength="1"
-                d="M370,300 L310,334 L330,394 L394,586"
+                d="M516,450 L560,480 L600,510"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
             </svg>
           </div>
