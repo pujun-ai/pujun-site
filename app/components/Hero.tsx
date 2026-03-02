@@ -9,47 +9,51 @@ interface Crack {
 }
 
 /**
- * Generate random kintsugi cracks radiating outward from the photo circle.
- * Circle center (300,300), radius 150 in the 600×600 SVG viewBox.
- * An SVG mask prevents any path from appearing inside the circle itself.
+ * Generate 7 kintsugi surface-fracture lines in the space around the photo circle.
+ * Origins are spread evenly around the clock but each crack travels at a large
+ * angular offset from the radial direction — so lines cross the background like
+ * real ceramic cracks rather than all pointing at the circle centre.
+ * An SVG mask hides any segment that would overlap the photo itself.
  */
 function generateCracks(): Crack[] {
-  const cx = 300, cy = 300, r = 153
+  const cx = 300, cy = 300
   const cracks: Crack[] = []
 
-  for (let i = 0; i < 26; i++) {
-    const angle = Math.random() * Math.PI * 2
-    const sx = cx + r * Math.cos(angle)
-    const sy = cy + r * Math.sin(angle)
-    const len = 55 + Math.random() * 195
-    const segs = 2 + Math.floor(Math.random() * 3)
+  for (let i = 0; i < 7; i++) {
+    // Even clock positions with a random nudge so they never bunch up
+    const baseAngle = (i / 7) * Math.PI * 2
+    const originAngle = baseAngle + (Math.random() - 0.5) * 0.65
+
+    // Varied starting distance from the circle edge (5–60 units outside r=150)
+    const startDist = 155 + Math.random() * 55
+    const sx = cx + startDist * Math.cos(originAngle)
+    const sy = cy + startDist * Math.sin(originAngle)
+
+    // Travel at 50–115° off the radial direction so cracks traverse the surface
+    // rather than converging on or diverging from the circle centre
+    const sign = Math.random() > 0.5 ? 1 : -1
+    const perpOff = Math.PI * 0.45 + Math.random() * Math.PI * 0.35
+    const travelAngle = originAngle + sign * perpOff
+
+    const len = 85 + Math.random() * 115
+    const segs = 2 + Math.floor(Math.random() * 2)
 
     let x = sx, y = sy
     let d = `M${x.toFixed(1)},${y.toFixed(1)}`
     for (let s = 0; s < segs; s++) {
-      const sl = (len / segs) * (0.6 + Math.random() * 0.8)
-      const drift = (Math.random() - 0.5) * 0.9
-      x += sl * Math.cos(angle + drift)
-      y += sl * Math.sin(angle + drift)
+      const sl = (len / segs) * (0.65 + Math.random() * 0.7)
+      const drift = (Math.random() - 0.5) * 0.7
+      x += sl * Math.cos(travelAngle + drift)
+      y += sl * Math.sin(travelAngle + drift)
       d += ` L${x.toFixed(1)},${y.toFixed(1)}`
     }
 
-    let cls: string, w: number, delay: string
-    if (i < 7) {
-      cls = 'crack crack-main'
-      w = 1.5 + Math.random() * 1.5
-      delay = '0s'
-    } else if (i < 18) {
-      cls = 'crack crack-branch'
-      w = 0.8 + Math.random() * 0.9
-      delay = `${(Math.random() * 0.25).toFixed(2)}s`
-    } else {
-      cls = 'crack crack-hair'
-      w = 0.4 + Math.random() * 0.5
-      delay = `${(0.2 + Math.random() * 0.5).toFixed(2)}s`
-    }
-
-    cracks.push({ d, w, cls, delay })
+    cracks.push({
+      d,
+      w: 1.0 + Math.random() * 1.2,
+      cls: i < 3 ? 'crack crack-main' : 'crack crack-branch',
+      delay: `${(Math.random() * 0.2).toFixed(2)}s`,
+    })
   }
 
   return cracks
@@ -158,20 +162,6 @@ export default function Hero() {
               alt="Pujun Bhatnagar"
               className="hero-photo"
             />
-          </div>
-
-          {/* Fact cards revealed when cracks animate in */}
-          <div className="kf kf-1">
-            <span className="kf-label">Childhood pastime</span>
-            <span className="kf-value">Video games</span>
-          </div>
-          <div className="kf kf-2">
-            <span className="kf-label">Where I studied</span>
-            <span className="kf-value">Georgia Tech · Stanford · MIT · Harvard</span>
-          </div>
-          <div className="kf kf-3">
-            <span className="kf-label">How I unwind</span>
-            <span className="kf-value">Photography · Coffee · Biking</span>
           </div>
 
         </div>
