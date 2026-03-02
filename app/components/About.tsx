@@ -8,47 +8,52 @@ export default function About() {
             Builder.<br /><em>Nerd.</em><br />Photographer.
           </h2>
           <p>
-            I was shaped early by two people: my <strong>mother and my sister</strong>. They taught me
-            to pay attention. To stay curious. To care about the details most people rush past.
+            I grew up shaped by two people: my <strong>mother and my sister</strong>. They taught me to
+            slow down and actually pay attention. To ask questions. To care about the things most people
+            gloss over. That stuck with me.
           </p>
           <p>
-            The first time I represented India at the <strong>International Mathematical Olympiad</strong>,
-            something rewired in me. Competing at that level showed me what it feels like to operate at
-            the frontier of human ability. It taught me how to sit with impossibly hard problems without
-            flinching.
+            Math was my first obsession. I competed for India at the{' '}
+            <strong>International Mathematical Olympiad</strong>, which sounds impressive on paper, but
+            what it really taught me was how to sit with a problem that has no obvious answer and not give
+            up. I came home with a <strong>Gold Medal in Mathematics</strong> and a Silver in Informatics.
+            More than the hardware, those experiences set a personal bar that I&apos;ve been quietly
+            trying to clear ever since.
           </p>
           <p>
-            I later returned home with a <strong>Gold Medal in Mathematics</strong> and a{' '}
-            <strong>Silver Medal in Informatics</strong>. More important than the medals was the standard
-            it set. Excellence became normal.
+            I studied Computer Science and AI at <strong>Georgia Tech</strong>, then went on to get my
+            Master&apos;s at <strong>Stanford</strong>, where I worked on intelligent tutoring systems and
+            reproducible machine learning research. Some of that work was later acquired by Microsoft and
+            seeded into what would eventually become part of <strong>OpenAI</strong>&apos;s early
+            foundation. Wild to think about now.
           </p>
           <p>
-            At <strong>Stanford</strong>, I studied Artificial Intelligence and worked on intelligent
-            tutoring systems and reproducible machine learning research. That work was later acquired by
-            Microsoft and contributed to early foundations that helped seed <strong>OpenAI</strong>.
+            From there I joined <strong>Facebook</strong>, where I was the first ML engineer on the
+            Stories team. I built the ranking systems behind Instagram Stories, Facebook Stories, WhatsApp
+            Stories, the whole Meta story ecosystem. Billions of people touched that work every day,
+            though most never knew it existed. That&apos;s kind of the point.
           </p>
           <p>
-            After Stanford, I joined <strong>Facebook</strong> as the first machine learning engineer on
-            the Stories team. I built ranking systems that became the backbone behind Instagram Stories,
-            Facebook Stories, WhatsApp Stories, and Meta&apos;s unified story ranking. Billions of people
-            used those systems daily.
-          </p>
-          <p>
-            Today, I am the CEO and co-founder of <strong>Kintsugi</strong>. We are building the
+            Today I&apos;m the CEO and co-founder of <strong>Kintsugi</strong>. We&apos;ve built the
             AI-native sales tax compliance platform for modern internet businesses. Sales tax is one of
-            the most underestimated operational risks for founders. We automate compliance across
-            13,000+ US jurisdictions so companies can scale without fear.
+            the most wildly underestimated operational risks founders face, especially post-Wayfair. We
+            automate compliance across 13,000+ US jurisdictions so companies can grow without suddenly
+            discovering they owe six figures in back taxes. We just closed a strategic investment from
+            Vertex and we&apos;re not slowing down.
           </p>
           <p>
-            Across math, research, big tech, and startups, the through-line has been the same:
-            Find complex systems. Understand them deeply. Build leverage.
+            The common thread across all of it — from olympiad math to big tech to running a company —
+            has been the same: find a hard, complex system, understand it at a deeper level than anyone
+            else, and build real leverage from that understanding.
           </p>
           <p>
-            When I am not building, I am usually walking through a city with a camera, riding my road
-            bike across the Golden Gate, cooking, or obsessing over mechanical keyboards and fountain pens.
+            When I&apos;m not building, I&apos;m usually wandering some neighborhood with a camera,
+            riding my bike across the Golden Gate, cooking something that takes too long, or going too
+            deep on mechanical keyboards and fountain pens. No apologies.
           </p>
           <p>
-            I believe in intensity. I believe in craft. I believe in taking the long road.
+            I believe in doing hard things. I believe in craft. And I believe the long road is usually
+            the right one.
           </p>
         </div>
         <div className="about-facts">
