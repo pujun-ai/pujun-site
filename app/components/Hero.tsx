@@ -42,27 +42,13 @@ export default function Hero() {
         {/* Outer wrapper — reference for IntersectionObserver & fact card positioning */}
         <div className="hero-photo-outer" ref={photoOuterRef}>
 
-          {/* Circle frame — clips photo + shards + cracks to circle boundary */}
-          <div className="hero-photo-circle">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/profile.jpg"
-              alt="Pujun Bhatnagar"
-              className="hero-photo"
-            />
-
-            {/* Photo shards — visible during animation, slide apart on break */}
-            <div className="shard shard-left"  style={{ backgroundImage: "url('/profile.jpg')" }} />
-            <div className="shard shard-mid"   style={{ backgroundImage: "url('/profile.jpg')" }} />
-            <div className="shard shard-right" style={{ backgroundImage: "url('/profile.jpg')" }} />
-
-            {/* Kintsugi crack SVG — all paths reach the circle boundary */}
-            <svg
-              className="hero-crack-overlay"
-              viewBox="0 0 600 600"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-            >
+          {/* Kintsugi crack SVG — lives OUTSIDE the circle so lines bleed into the page background */}
+          <svg
+            className="hero-crack-bg"
+            viewBox="0 0 600 600"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+          >
               <defs>
                 <linearGradient id="goldCrack" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%"   stopColor="#C9A84C" stopOpacity="0" />
@@ -110,6 +96,20 @@ export default function Hero() {
                 d="M516,450 L560,480 L600,510"
                 fill="none" stroke="url(#goldCrack)" strokeWidth="0.8" />
             </svg>
+
+          {/* Circle frame — clips photo + shards to circle; sits above the crack bg */}
+          <div className="hero-photo-circle">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/profile.jpg"
+              alt="Pujun Bhatnagar"
+              className="hero-photo"
+            />
+
+            {/* Photo shards — visible during animation, slide apart on break */}
+            <div className="shard shard-left"  style={{ backgroundImage: "url('/profile.jpg')" }} />
+            <div className="shard shard-mid"   style={{ backgroundImage: "url('/profile.jpg')" }} />
+            <div className="shard shard-right" style={{ backgroundImage: "url('/profile.jpg')" }} />
           </div>
 
           {/* Facts revealed by the cracks — positioned over the circle */}
