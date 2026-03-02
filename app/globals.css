@@ -242,12 +242,14 @@ nav.scrolled {
 }
 
 .hero-right {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--ceramic-mid);
   animation: slideIn 1s ease 0.3s both;
   padding: 48px;
+  overflow: hidden; /* clip cracks at the slab boundary */
 }
 
 /* Outer square — positions facts absolutely, reference for IntersectionObserver */

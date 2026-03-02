@@ -9,42 +9,61 @@ interface Crack {
 }
 
 /**
- * Generate 7 kintsugi surface-fracture lines in the space around the photo circle.
- * Origins are spread evenly around the clock but each crack travels at a large
- * angular offset from the radial direction — so lines cross the background like
- * real ceramic cracks rather than all pointing at the circle centre.
- * An SVG mask hides any segment that would overlap the photo itself.
+ * Find where a ray from (ox, oy) in direction `angle` first hits the slab boundary.
+ * Bounds are slightly larger than the 600×600 viewBox so cracks reach the very
+ * top/bottom edges of hero-right (the SVG overflows ~55 viewBox units past the
+ * viewBox edge in each vertical direction at typical viewport sizes).
+ */
+function rayToEdge(ox: number, oy: number, angle: number): [number, number] {
+  const L = -20, R = 620, T = -60, B = 660
+  const dx = Math.cos(angle), dy = Math.sin(angle)
+  let t = Infinity
+  if (dx >  1e-9) t = Math.min(t, (R - ox) / dx)
+  if (dx < -1e-9) t = Math.min(t, (L - ox) / dx)
+  if (dy >  1e-9) t = Math.min(t, (B - oy) / dy)
+  if (dy < -1e-9) t = Math.min(t, (T - oy) / dy)
+  return [ox + dx * t, oy + dy * t]
+}
+
+/**
+ * Generate 7 kintsugi surface-fracture lines that traverse the full ceramic slab
+ * (hero-right panel) from one edge to the other. The SVG mask hides each line
+ * where it crosses the photo circle, so the cracks appear to travel under it.
  */
 function generateCracks(): Crack[] {
   const cx = 300, cy = 300
   const cracks: Crack[] = []
 
   for (let i = 0; i < 7; i++) {
-    // Even clock positions with a random nudge so they never bunch up
+    // Evenly spaced base angle with randomisation so no two cycles look the same
     const baseAngle = (i / 7) * Math.PI * 2
-    const originAngle = baseAngle + (Math.random() - 0.5) * 0.65
+    const angle = baseAngle + (Math.random() - 0.5) * 0.7
 
-    // Varied starting distance from the circle edge (5–60 units outside r=150)
-    const startDist = 155 + Math.random() * 55
-    const sx = cx + startDist * Math.cos(originAngle)
-    const sy = cy + startDist * Math.sin(originAngle)
+    // Both ends of the crack: opposite rays from the circle centre to the slab edges
+    const [sx, sy] = rayToEdge(cx, cy, angle + Math.PI)
+    const [ex, ey] = rayToEdge(cx, cy, angle)
 
-    // Travel at 50–115° off the radial direction so cracks traverse the surface
-    // rather than converging on or diverging from the circle centre
-    const sign = Math.random() > 0.5 ? 1 : -1
-    const perpOff = Math.PI * 0.45 + Math.random() * Math.PI * 0.35
-    const travelAngle = originAngle + sign * perpOff
+    // Shift each crack sideways so they don't all pass through dead centre
+    const perpX = -Math.sin(angle), perpY = Math.cos(angle)
+    const offset = (Math.random() - 0.5) * 70
+    const asx = sx + perpX * offset, asy = sy + perpY * offset
+    const aex = ex + perpX * offset, aey = ey + perpY * offset
 
-    const len = 85 + Math.random() * 115
-    const segs = 2 + Math.floor(Math.random() * 2)
-
-    let x = sx, y = sy
+    // Build a jagged path with 3–5 kinks
+    const segs = 3 + Math.floor(Math.random() * 3)
+    let x = asx, y = asy
     let d = `M${x.toFixed(1)},${y.toFixed(1)}`
     for (let s = 0; s < segs; s++) {
-      const sl = (len / segs) * (0.65 + Math.random() * 0.7)
-      const drift = (Math.random() - 0.5) * 0.7
-      x += sl * Math.cos(travelAngle + drift)
-      y += sl * Math.sin(travelAngle + drift)
+      const t = (s + 1) / segs
+      const bx = asx + (aex - asx) * t
+      const by = asy + (aey - asy) * t
+      const jitter = (Math.random() - 0.5) * 28
+      if (s < segs - 1) {
+        x = bx + perpX * jitter
+        y = by + perpY * jitter
+      } else {
+        x = aex; y = aey   // last point hits the edge exactly
+      }
       d += ` L${x.toFixed(1)},${y.toFixed(1)}`
     }
 
