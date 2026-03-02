@@ -116,6 +116,7 @@ nav.scrolled {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
   padding-top: 90px;
   background: var(--ceramic);
 }
@@ -256,20 +257,6 @@ nav.scrolled {
   position: relative;
 }
 
-/* Vignette gradient so stats read cleanly at the bottom */
-.hero-image-placeholder::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 40%,
-    rgba(20, 16, 10, 0.5) 70%,
-    rgba(20, 16, 10, 0.85) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
 
 .hero-photo {
   position: absolute;
@@ -288,47 +275,24 @@ nav.scrolled {
   opacity: 0.65;
 }
 
-.hero-stat-stack {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
+.hero-stats-strip {
+  grid-column: 1 / -1;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  gap: 0;
-  padding: 0 0 32px;
-  width: 100%;
+  border-top: 1px solid var(--gold-border);
+  background: var(--ceramic-mid);
 }
 
 .hero-stat-col {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 0 24px;
-  border-left: 1px solid rgba(240, 224, 160, 0.3);
+  gap: 6px;
+  padding: 24px 40px;
+  border-left: 1px solid var(--gold-border);
 }
 
 .hero-stat-col:first-child {
   border-left: none;
-}
-
-.hero-stat {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 52px;
-  color: #F0E0A0;
-  line-height: 1;
-  font-weight: 300;
-  text-shadow:
-    0 2px 16px rgba(20, 16, 10, 0.9),
-    0 1px 4px rgba(20, 16, 10, 0.8);
-}
-
-.hero-stat--text {
-  font-size: 15px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
 }
 
 .hero-stat-label {
@@ -336,10 +300,15 @@ nav.scrolled {
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(240, 224, 160, 0.7);
-  text-shadow: 0 1px 8px rgba(20, 16, 10, 0.9);
-  margin-top: 4px;
-  margin-bottom: 24px;
+  color: var(--warm-gray);
+}
+
+.hero-stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1.3;
 }
 
 /* ─── CREDENTIALS BAR ───────────────────────────────────────────────────── */
@@ -928,9 +897,12 @@ footer {
   nav { padding: 20px 24px; }
   .nav-links { display: none; }
 
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
   .hero-right { min-height: 280px; }
   .hero-left { padding: 60px 24px; }
+  .hero-stats-strip { flex-direction: column; }
+  .hero-stat-col { border-left: none; border-top: 1px solid var(--gold-border); }
+  .hero-stat-col:first-child { border-top: none; }
   .hero-left::after { display: none; }
 
   section { padding: 80px 24px; }
