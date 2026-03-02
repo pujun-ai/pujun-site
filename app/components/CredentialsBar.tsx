@@ -2,7 +2,7 @@ const items = [
   { label: 'Born', sub: 'India' },
   { label: 'Built', sub: 'in competition' },
   { label: 'Trained at', sub: 'Stanford' },
-  { label: 'First ML on', sub: 'Meta Stories' },
+  { label: 'First ML Engineer at', sub: 'Facebook' },
   { label: 'Now', sub: 'CEO, Kintsugi' },
 ]
 
