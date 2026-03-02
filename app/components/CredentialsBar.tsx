@@ -1,12 +1,11 @@
 const items = [
   { label: 'Born', sub: 'India' },
-  { label: 'Built', sub: 'in competition' },
   { label: 'Trained at', sub: 'Stanford' },
   { label: 'First ML Engineer at', sub: 'Facebook' },
   { label: 'Now', sub: 'CEO, Kintsugi' },
 ]
 
-const hobbies = 'Photography · Road cycling · Cooking vegetarian food · Collecting pens and watches · Building keyboards'
+const hobbies = 'Cooking · Building keyboards'
 
 export default function CredentialsBar() {
   return (
