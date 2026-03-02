@@ -1,101 +1,70 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
-
-interface Crack {
-  d: string
-  w: number      // strokeWidth
-  cls: string    // crack-main | crack-branch | crack-hair
-  delay: string  // CSS animation-delay value
-}
+import { useEffect, useRef } from 'react'
 
 /**
- * Find where a ray from (ox, oy) in direction `angle` first hits the slab boundary.
- * Bounds are slightly larger than the 600×600 viewBox so cracks reach the very
- * top/bottom edges of hero-right (the SVG overflows ~55 viewBox units past the
- * viewBox edge in each vertical direction at typical viewport sizes).
- */
-function rayToEdge(ox: number, oy: number, angle: number): [number, number] {
-  const L = -20, R = 620, T = -60, B = 660
-  const dx = Math.cos(angle), dy = Math.sin(angle)
-  let t = Infinity
-  if (dx >  1e-9) t = Math.min(t, (R - ox) / dx)
-  if (dx < -1e-9) t = Math.min(t, (L - ox) / dx)
-  if (dy >  1e-9) t = Math.min(t, (B - oy) / dy)
-  if (dy < -1e-9) t = Math.min(t, (T - oy) / dy)
-  return [ox + dx * t, oy + dy * t]
-}
-
-/**
- * Generate 7 kintsugi surface-fracture lines that traverse the full ceramic slab
- * (hero-right panel) from one edge to the other. The SVG mask hides each line
- * where it crosses the photo circle, so the cracks appear to travel under it.
+ * Hand-crafted kintsugi crack paths.
  *
- * Each crack uses many short segments with large perpendicular deviations that
- * tend to flip sides (~60 % of the time), producing the sharp zigzag corners
- * characteristic of lightning and real ceramic fractures.
+ * Coordinate space: 600×600 SVG viewBox; photo circle at (300,300) r=150.
+ * Paths use cubic bézier curves (C) for smooth, organic shapes — no random
+ * generation. The same pattern draws in every 5-second animation cycle.
+ *
+ * Structure (mirrors the kintsugi bowl reference):
+ *   • Two main fractures form an X across the slab, crossing inside the
+ *     circle (masked) and emerging on opposite sides.
+ *   • An upper connector joins the two mains above the circle, enclosing a
+ *     trapezoidal region at the top.
+ *   • A lower connector joins them below the circle, enclosing another region.
+ *   • Three branches radiate outward from the junction nodes to the slab edges.
  */
-function generateCracks(): Crack[] {
-  const cx = 300, cy = 300
-  const cracks: Crack[] = []
-
-  for (let i = 0; i < 7; i++) {
-    // Evenly spaced base angle with randomisation so no two cycles look the same
-    const baseAngle = (i / 7) * Math.PI * 2
-    const angle = baseAngle + (Math.random() - 0.5) * 0.7
-
-    // Both ends of the crack: opposite rays from the circle centre to the slab edges
-    const [sx, sy] = rayToEdge(cx, cy, angle + Math.PI)
-    const [ex, ey] = rayToEdge(cx, cy, angle)
-
-    // Shift each crack sideways so they don't all pass through dead centre
-    const perpX = -Math.sin(angle), perpY = Math.cos(angle)
-    const offset = (Math.random() - 0.5) * 70
-    const asx = sx + perpX * offset, asy = sy + perpY * offset
-    const aex = ex + perpX * offset, aey = ey + perpY * offset
-
-    // Many short segments — 9–13 vertices creates the lightning/zigzag density
-    const segs = 9 + Math.floor(Math.random() * 5)
-    let x = asx, y = asy
-    let d = `M${x.toFixed(1)},${y.toFixed(1)}`
-
-    // Start on a random side; ~60 % chance to flip at each vertex → zigzag
-    let side = Math.random() < 0.5 ? 1 : -1
-    for (let s = 0; s < segs; s++) {
-      const t = (s + 1) / segs
-      // Base point along the straight line from start → end
-      const bx = asx + (aex - asx) * t
-      const by = asy + (aey - asy) * t
-
-      if (s < segs - 1) {
-        if (Math.random() < 0.62) side = -side          // flip side → sharp corner
-        const mag = 28 + Math.random() * 42             // 28–70 unit deviation
-        x = bx + perpX * side * mag
-        y = by + perpY * side * mag
-      } else {
-        x = aex; y = aey                               // last point hits the edge
-      }
-      d += ` L${x.toFixed(1)},${y.toFixed(1)}`
-    }
-
-    cracks.push({
-      d,
-      w: 1.0 + Math.random() * 1.0,
-      cls: i < 3 ? 'crack crack-main' : 'crack crack-branch',
-      delay: `${(Math.random() * 0.2).toFixed(2)}s`,
-    })
-  }
-
-  return cracks
-}
+const CRACKS = [
+  // ── Main fracture 1: upper-right → lower-left ──────────────────────────
+  {
+    d: 'M 490,-55 C 465,40 435,115 400,170 C 365,225 325,268 295,305 C 260,345 220,390 190,450 C 165,510 128,580 90,660',
+    w: 1.9, cls: 'crack crack-main', delay: '0s',
+  },
+  // ── Main fracture 2: upper-left → lower-right ──────────────────────────
+  {
+    d: 'M 100,-55 C 130,40 165,115 200,170 C 235,225 275,268 305,305 C 340,345 382,392 412,450 C 438,510 464,580 492,660',
+    w: 1.9, cls: 'crack crack-main', delay: '0.04s',
+  },
+  // ── Upper connector: joins the two mains above the circle ──────────────
+  // Creates an enclosed trapezoidal region between the top entries and the circle
+  {
+    d: 'M 165,115 C 225,107 275,102 300,101 C 325,100 375,107 435,115',
+    w: 1.3, cls: 'crack crack-branch', delay: '0.1s',
+  },
+  // ── Branch: top-left corner from the upper-left junction ───────────────
+  {
+    d: 'M 165,115 C 120,96 68,72 18,46 C -2,34 -14,18 -20,6',
+    w: 1.0, cls: 'crack crack-branch', delay: '0.14s',
+  },
+  // ── Branch: top-right corner from the upper-right junction ────────────
+  {
+    d: 'M 435,115 C 480,96 532,72 582,46 C 602,34 614,18 620,6',
+    w: 1.0, cls: 'crack crack-branch', delay: '0.14s',
+  },
+  // ── Small branch: upward spur from the upper connector midpoint ────────
+  {
+    d: 'M 300,101 C 296,68 282,28 268,-22',
+    w: 0.8, cls: 'crack crack-branch', delay: '0.18s',
+  },
+  // ── Lower connector: joins the two mains below the circle ─────────────
+  // Creates an enclosed region between the circle base and the lower branches
+  {
+    d: 'M 188,468 C 232,457 275,454 300,455 C 325,456 368,460 412,468',
+    w: 1.3, cls: 'crack crack-branch', delay: '0.1s',
+  },
+  // ── Branch: lower-right from the lower-right junction ─────────────────
+  {
+    d: 'M 412,468 C 456,450 508,428 558,404 C 582,392 604,378 620,366',
+    w: 0.9, cls: 'crack crack-branch', delay: '0.2s',
+  },
+]
 
 export default function Hero() {
   const photoOuterRef = useRef<HTMLDivElement>(null)
-  const [{ gen, cracks }, setTick] = useState(() => ({
-    gen: 0,
-    cracks: generateCracks(),
-  }))
 
-  // Toggle kintsugi-active when section enters viewport
+  // Toggle kintsugi-active when the section enters the viewport
   useEffect(() => {
     const el = photoOuterRef.current
     if (!el) return
@@ -105,15 +74,6 @@ export default function Hero() {
     )
     observer.observe(el)
     return () => observer.disconnect()
-  }, [])
-
-  // Regenerate cracks every 5 s to sync with animation cycle
-  useEffect(() => {
-    const id = setInterval(
-      () => setTick(prev => ({ gen: prev.gen + 1, cracks: generateCracks() })),
-      5000
-    )
-    return () => clearInterval(id)
   }, [])
 
   return (
@@ -139,7 +99,7 @@ export default function Hero() {
       <div className="hero-right">
         <div className="hero-photo-outer" ref={photoOuterRef}>
 
-          {/* Crack SVG — outside and behind the circle; mask keeps cracks out of the photo area */}
+          {/* Crack SVG — sits behind the circle; mask hides lines inside the photo */}
           <svg
             className="hero-crack-bg"
             viewBox="0 0 600 600"
@@ -159,24 +119,27 @@ export default function Hero() {
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
-              {/* Punches out the circle — no crack lines can appear inside the photo */}
+              {/*
+                Mask: white everywhere except the photo circle (black = transparent).
+                The rect is oversized to cover paths that extend beyond the viewBox.
+              */}
               <mask id="noCircle">
-                <rect x="0" y="0" width="600" height="600" fill="white" />
+                <rect x="-20" y="-60" width="640" height="720" fill="white" />
                 <circle cx="300" cy="300" r="150" fill="black" />
               </mask>
             </defs>
 
             <g mask="url(#noCircle)">
-              {cracks.map((c, i) => (
+              {CRACKS.map((c, i) => (
                 <path
-                  key={`${gen}-${i}`}
+                  key={i}
                   className={c.cls}
                   pathLength="1"
                   d={c.d}
                   fill="none"
                   stroke="url(#goldCrack)"
                   strokeWidth={c.w}
-                  filter={c.cls.includes('hair') ? undefined : 'url(#goldGlow)'}
+                  filter="url(#goldGlow)"
                   style={{ animationDelay: c.delay }}
                 />
               ))}
