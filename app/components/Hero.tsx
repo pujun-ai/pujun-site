@@ -29,6 +29,10 @@ function rayToEdge(ox: number, oy: number, angle: number): [number, number] {
  * Generate 7 kintsugi surface-fracture lines that traverse the full ceramic slab
  * (hero-right panel) from one edge to the other. The SVG mask hides each line
  * where it crosses the photo circle, so the cracks appear to travel under it.
+ *
+ * Each crack uses many short segments with large perpendicular deviations that
+ * tend to flip sides (~60 % of the time), producing the sharp zigzag corners
+ * characteristic of lightning and real ceramic fractures.
  */
 function generateCracks(): Crack[] {
   const cx = 300, cy = 300
@@ -49,27 +53,33 @@ function generateCracks(): Crack[] {
     const asx = sx + perpX * offset, asy = sy + perpY * offset
     const aex = ex + perpX * offset, aey = ey + perpY * offset
 
-    // Build a jagged path with 3–5 kinks
-    const segs = 3 + Math.floor(Math.random() * 3)
+    // Many short segments — 9–13 vertices creates the lightning/zigzag density
+    const segs = 9 + Math.floor(Math.random() * 5)
     let x = asx, y = asy
     let d = `M${x.toFixed(1)},${y.toFixed(1)}`
+
+    // Start on a random side; ~60 % chance to flip at each vertex → zigzag
+    let side = Math.random() < 0.5 ? 1 : -1
     for (let s = 0; s < segs; s++) {
       const t = (s + 1) / segs
+      // Base point along the straight line from start → end
       const bx = asx + (aex - asx) * t
       const by = asy + (aey - asy) * t
-      const jitter = (Math.random() - 0.5) * 28
+
       if (s < segs - 1) {
-        x = bx + perpX * jitter
-        y = by + perpY * jitter
+        if (Math.random() < 0.62) side = -side          // flip side → sharp corner
+        const mag = 28 + Math.random() * 42             // 28–70 unit deviation
+        x = bx + perpX * side * mag
+        y = by + perpY * side * mag
       } else {
-        x = aex; y = aey   // last point hits the edge exactly
+        x = aex; y = aey                               // last point hits the edge
       }
       d += ` L${x.toFixed(1)},${y.toFixed(1)}`
     }
 
     cracks.push({
       d,
-      w: 1.0 + Math.random() * 1.2,
+      w: 1.0 + Math.random() * 1.0,
       cls: i < 3 ? 'crack crack-main' : 'crack crack-branch',
       delay: `${(Math.random() * 0.2).toFixed(2)}s`,
     })
