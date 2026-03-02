@@ -42,9 +42,9 @@ export default function About() {
             Vertex and we&apos;re not slowing down.
           </p>
           <p>
-            The common thread across all of it — from olympiad math to big tech to running a company —
-            has been the same: find a hard, complex system, understand it at a deeper level than anyone
-            else, and build real leverage from that understanding.
+            The common thread across all of it, from olympiad math to big tech to running a 150 person
+            company, has been the same: find a hard, complex system, understand it at a deeper level than
+            anyone else, and build real leverage from that understanding.
           </p>
           <p>
             When I&apos;m not building, I&apos;m usually wandering some neighborhood with a camera,
