@@ -241,22 +241,30 @@ nav.scrolled {
 }
 
 .hero-right {
-  position: relative;
-  overflow: hidden;
-  animation: slideIn 1s ease 0.3s both;
-  background: var(--ceramic-mid);
-}
-
-.hero-image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: var(--ceramic-mid);
   display: flex;
-  align-items: flex-end;
-  padding: 0;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: var(--ceramic-mid);
+  animation: slideIn 1s ease 0.3s both;
+  padding: 48px;
 }
 
+/* Outer square — positions facts absolutely, reference for IntersectionObserver */
+.hero-photo-outer {
+  position: relative;
+  width: min(380px, 90%);
+  aspect-ratio: 1 / 1;
+}
+
+/* Circle frame — clips photo + cracks to circle */
+.hero-photo-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px var(--gold-border);
+  transition: box-shadow 0.6s ease;
+}
 
 .hero-photo {
   position: absolute;
@@ -271,8 +279,137 @@ nav.scrolled {
 .hero-crack-overlay {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  opacity: 0.65;
+}
+
+/* Cracks hidden by default — revealed by animation */
+.crack {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+
+/* ─── KINTSUGI FACT CARDS ───────────────────────────────────────────────── */
+.kf {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: rgba(20, 16, 10, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  padding: 8px 13px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+}
+
+.kf-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+}
+
+.kf-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* Positioned within the circular photo area */
+.kf-1 { top: 18%;  left: 6%; }
+.kf-2 { top: 46%;  left: 16%; }
+.kf-3 { bottom: 16%; right: 6%; }
+
+/* ─── KINTSUGI ANIMATION KEYFRAMES ─────────────────────────────────────── */
+/*
+  5-second meditative loop:
+  0s   – 0.8s  silence
+  0.8s – 2.2s  cracks draw in
+  2.2s – 2.7s  facts fade in
+  2.7s – 3.7s  hold
+  3.7s – 4.2s  facts fade out
+  4.2s – 4.6s  gold ring flash (reassembly sealed)
+  4.6s – 5.0s  settle back to ambient
+*/
+
+@keyframes kintsugiCrackMain {
+  0%   { stroke-dashoffset: 1; opacity: 0; }
+  16%  { stroke-dashoffset: 1; opacity: 0; }     /* 0.8s delay  */
+  44%  { stroke-dashoffset: 0; opacity: 0.95; }  /* fully drawn  */
+  74%  { stroke-dashoffset: 0; opacity: 0.85; }  /* hold         */
+  90%  { stroke-dashoffset: 0; opacity: 0.25; }  /* fade         */
+  100% { stroke-dashoffset: 1; opacity: 0; }     /* reset        */
+}
+
+@keyframes kintsugiCrackBranch {
+  0%   { stroke-dashoffset: 1; opacity: 0; }
+  24%  { stroke-dashoffset: 1; opacity: 0; }
+  50%  { stroke-dashoffset: 0; opacity: 0.75; }
+  74%  { stroke-dashoffset: 0; opacity: 0.65; }
+  90%  { stroke-dashoffset: 0; opacity: 0.2; }
+  100% { stroke-dashoffset: 1; opacity: 0; }
+}
+
+@keyframes kintsugiFactReveal {
+  0%   { opacity: 0; transform: translateY(6px); }
+  44%  { opacity: 0; transform: translateY(6px); }
+  54%  { opacity: 1; transform: translateY(0); }
+  72%  { opacity: 1; transform: translateY(0); }
+  82%  { opacity: 0; transform: translateY(-4px); }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+@keyframes kintsugiPhotoShift {
+  0%   { opacity: 0.92; }
+  44%  { opacity: 0.65; }
+  80%  { opacity: 0.65; }
+  95%  { opacity: 0.92; }
+  100% { opacity: 0.92; }
+}
+
+@keyframes kintsugiRing {
+  0%   { box-shadow: 0 0 0 2px var(--gold-border); }
+  44%  { box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.5), 0 0 24px rgba(201, 168, 76, 0.18); }
+  74%  { box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.5), 0 0 24px rgba(201, 168, 76, 0.18); }
+  88%  { box-shadow: 0 0 0 5px var(--gold), 0 0 48px rgba(201, 168, 76, 0.55); }
+  100% { box-shadow: 0 0 0 2px var(--gold-border); }
+}
+
+/* ─── ACTIVE STATE (toggled by IntersectionObserver) ───────────────────── */
+.kintsugi-active .crack-main {
+  animation: kintsugiCrackMain 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.kintsugi-active .crack-branch {
+  animation: kintsugiCrackBranch 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.kintsugi-active .crack-hair {
+  animation: kintsugiCrackBranch 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 0.4s;
+}
+
+.kintsugi-active .kf {
+  animation: kintsugiFactReveal 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.kintsugi-active .kf-2 { animation-delay: 0.15s; }
+.kintsugi-active .kf-3 { animation-delay: 0.3s; }
+
+.kintsugi-active .hero-photo {
+  animation: kintsugiPhotoShift 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.kintsugi-active .hero-photo-circle {
+  animation: kintsugiRing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .hero-stats-strip {
@@ -898,12 +1035,14 @@ footer {
   .nav-links { display: none; }
 
   .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
-  .hero-right { min-height: 280px; }
+  .hero-right { padding: 40px 24px; min-height: 340px; }
+  .hero-photo-outer { width: min(280px, 80vw); }
   .hero-left { padding: 60px 24px; }
   .hero-stats-strip { flex-direction: column; }
   .hero-stat-col { border-left: none; border-top: 1px solid var(--gold-border); }
   .hero-stat-col:first-child { border-top: none; }
   .hero-left::after { display: none; }
+  .kf { display: none; } /* Facts shown in stats strip on mobile */
 
   section { padding: 80px 24px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
