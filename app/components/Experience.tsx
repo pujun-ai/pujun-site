@@ -4,7 +4,7 @@ const roles = [
     title: 'CEO & Co-Founder',
     company: 'Kintsugi',
     description:
-      'Building the leading AI-native sales tax compliance platform for modern internet businesses. Serving hundreds of companies navigating multi-state and global compliance.',
+      'Building software that automates sales tax compliance for internet businesses. Helps companies stay on top of multi-state obligations before they become a real problem.',
     badge: 'Current',
   },
   {
@@ -12,7 +12,7 @@ const roles = [
     title: 'First ML Engineer at Facebook Stories',
     company: 'Meta (Facebook)',
     description:
-      'Built the machine learning ranking systems that powered Stories across Instagram, Facebook, and WhatsApp, reaching billions of users daily.',
+      'Worked on the ML ranking systems behind Stories across Instagram, Facebook, and WhatsApp. Learned a lot about building at scale and how much can quietly go wrong.',
     badge: 'Previous',
   },
 ]

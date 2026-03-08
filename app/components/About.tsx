@@ -57,10 +57,6 @@ export default function About() {
             <span className="fact-value">San Francisco, CA</span>
           </div>
           <div className="fact-row">
-            <span className="fact-label">Grew up in</span>
-            <span className="fact-value">India</span>
-          </div>
-          <div className="fact-row">
             <span className="fact-label">Undergrad</span>
             <span className="fact-value">Georgia Tech, Computer Engineering</span>
           </div>
@@ -83,7 +79,7 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Company</span>
-            <span className="fact-value">Kintsugi (CEO)</span>
+            <span className="fact-value">Kintsugi AI (CEO)</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Unwind</span>
