@@ -32,10 +32,10 @@ export default function About() {
             of engineering is just damage control.
           </p>
           <p>
-            In 2021 I left to start <strong>Kintsugi</strong> with my co-founder. We build software that
-            handles sales tax compliance for internet businesses automatically. It&apos;s not a glamorous
-            problem, but it&apos;s a real one. A lot of founders find out too late that they owe
-            significant back taxes across dozens of states. We&apos;re trying to make that not happen.
+            In 2021 I left to start <strong>Kintsugi AI</strong> with my co-founder. We build software
+            that handles sales tax compliance for internet businesses automatically. It&apos;s not a
+            glamorous problem, but it&apos;s a real one. A lot of founders find out too late that they
+            owe significant back taxes across dozens of states. We&apos;re trying to make that not happen.
           </p>
           <p>
             Looking back, I&apos;ve been in a lot of places at the right time. The honest version is that
@@ -54,10 +54,6 @@ export default function About() {
           <div className="fact-row">
             <span className="fact-label">Based in</span>
             <span className="fact-value">San Francisco, CA</span>
-          </div>
-          <div className="fact-row">
-            <span className="fact-label">Grew up in</span>
-            <span className="fact-value">India</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Undergrad</span>
@@ -85,7 +81,7 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Company</span>
-            <span className="fact-value">Kintsugi (CEO)</span>
+            <span className="fact-value">Kintsugi AI (CEO)</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Unwind</span>
