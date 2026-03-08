@@ -39,7 +39,7 @@ export default function Hero() {
         </div>
         <div className="hero-stat-col">
           <div className="hero-stat-label">Where I studied</div>
-          <div className="hero-stat-value">Georgia Tech · Stanford · MIT · Harvard</div>
+          <div className="hero-stat-value">Georgia Tech · MIT · Harvard</div>
         </div>
         <div className="hero-stat-col">
           <div className="hero-stat-label">How I unwind</div>
