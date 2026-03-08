@@ -22,8 +22,9 @@ export default function About() {
           <p>
             I studied Computer Science and AI at <strong>Georgia Tech</strong>, then did a Master&apos;s
             at <strong>Stanford</strong>. I worked on ML research while I was there, mostly the
-            unglamorous stuff, like making research reproducible. I got lucky that some of it turned out
-            to matter to other people after I left.
+            unglamorous stuff, like making research reproducible. Some of that research was later
+            acquired by <strong>Microsoft</strong> and became part of the foundation that
+            <strong>OpenAI</strong> was built on. I got lucky that some of it turned out to matter.
           </p>
           <p>
             From there I joined <strong>Facebook</strong>, early on the team that built Stories. I wrote
@@ -32,7 +33,7 @@ export default function About() {
             of engineering is just damage control.
           </p>
           <p>
-            In 2021 I left to start <strong>Kintsugi</strong> with my co-founder. We build software that
+            In 2023 I left to start <strong>Kintsugi AI</strong> with my co-founder. We build software that
             handles sales tax compliance for internet businesses automatically. It&apos;s not a glamorous
             problem, but it&apos;s a real one. A lot of founders find out too late that they owe
             significant back taxes across dozens of states. We&apos;re trying to make that not happen.
@@ -75,10 +76,7 @@ export default function About() {
             <span className="fact-label">Also</span>
             <span className="fact-value">Harvard Business School (left early) · MIT Lecturer</span>
           </div>
-          <div className="fact-row">
-            <span className="fact-label">Olympiads</span>
-            <span className="fact-value">Gold: Math · Silver: Informatics</span>
-          </div>
+
           <div className="fact-row">
             <span className="fact-label">Previously</span>
             <span className="fact-value">ML Engineer, Meta</span>
