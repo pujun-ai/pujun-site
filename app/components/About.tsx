@@ -124,6 +124,17 @@ export default function About() {
               Michael Jackson
             </span>
           </div>
+          <div className="fact-row">
+            <span className="fact-label">Favorite Cameras</span>
+            <span className="fact-value">
+              Sony A7ii<br />
+              Fujifilm X-T6
+            </span>
+          </div>
+          <div className="fact-row">
+            <span className="fact-label">Favorite Bike</span>
+            <span className="fact-value">Trek Domane</span>
+          </div>
         </div>
       </div>
 
