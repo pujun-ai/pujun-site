@@ -99,7 +99,30 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Unwind</span>
-            <span className="fact-value">Photography · Road cycling · Cooking · Making Coffee · Collecting Pens · Building Keyboards</span>
+            <span className="fact-value">
+              Photography<br />
+              Road cycling<br />
+              Cooking<br />
+              Making Coffee<br />
+              Collecting Pens<br />
+              Building Keyboards
+            </span>
+          </div>
+          <div className="fact-row">
+            <span className="fact-label">Favorite Films</span>
+            <span className="fact-value">
+              Ratatouille<br />
+              Inception<br />
+              The Holiday
+            </span>
+          </div>
+          <div className="fact-row">
+            <span className="fact-label">Favorite Music</span>
+            <span className="fact-value">
+              Vampire Weekend<br />
+              Backstreet Boys<br />
+              Michael Jackson
+            </span>
           </div>
         </div>
       </div>
