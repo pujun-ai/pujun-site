@@ -8,10 +8,11 @@ export default function Hero() {
           <em>Bhatnagar</em>
         </h1>
         <p className="hero-bio">
-          I grew up in India. Spent years doing math competitions, then went to school in the US,
-          then ended up at Meta building ML systems. Now I run Kintsugi in San Francisco.
-          <br /><br />
-          A lot of it was timing and luck. The rest was just showing up.
+          I like traveling to beautiful cities, and I like taking the long way home.
+        </p>
+        <p className="hero-bio">
+          This website is a reflection of who I am as a person, what I like to do in my spare
+          time, and what my life journey has been so far.
         </p>
         <div className="hero-ctas">
           <a href="#about" className="btn-primary">Read more ↓</a>
