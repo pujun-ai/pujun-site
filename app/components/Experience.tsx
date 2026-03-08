@@ -9,7 +9,7 @@ const roles = [
   },
   {
     period: '2012 – 2021',
-    title: 'First ML Engineer & Senior Engineer',
+    title: 'First ML Engineer at Facebook Stories',
     company: 'Meta (Facebook)',
     description:
       'Built the machine learning ranking systems that powered Stories across Instagram, Facebook, and WhatsApp, reaching billions of users daily.',
