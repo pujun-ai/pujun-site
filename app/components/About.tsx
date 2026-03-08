@@ -13,47 +13,41 @@ export default function About() {
             gloss over. That stuck with me.
           </p>
           <p>
-            Math was my first obsession. I competed for India at the{' '}
-            <strong>International Mathematical Olympiad</strong>, which sounds impressive on paper, but
-            what it really taught me was how to sit with a problem that has no obvious answer and not give
-            up. I came home with a <strong>Gold Medal in Mathematics</strong> and a Silver in Informatics.
-            More than the hardware, those experiences set a personal bar that I&apos;ve been quietly
-            trying to clear ever since.
+            Math got me when I was a kid and never really let go. I competed for India at the{' '}
+            <strong>International Mathematical Olympiad</strong>, something that sounds more impressive
+            than it felt at the time. I was mostly just a nervous kid who liked numbers. I came home with
+            a Gold Medal in Mathematics and a Silver in Informatics. What those competitions actually
+            taught me was how to sit with a problem and not panic.
           </p>
           <p>
-            I studied Computer Science and AI at <strong>Georgia Tech</strong>, then went on to get my
-            Master&apos;s at <strong>Stanford</strong>, where I worked on intelligent tutoring systems and
-            reproducible machine learning research. Some of that work was later acquired by Microsoft and
-            seeded into what would eventually become part of <strong>OpenAI</strong>&apos;s early
-            foundation. Wild to think about now.
+            I studied Computer Science and AI at <strong>Georgia Tech</strong>, then did a Master&apos;s
+            at <strong>Stanford</strong>. I worked on ML research while I was there, mostly the
+            unglamorous stuff, like making research reproducible. I got lucky that some of it turned out
+            to matter to other people after I left.
           </p>
           <p>
-            From there I joined <strong>Facebook</strong>, where I was the first ML engineer on the
-            Stories team. I built the ranking systems behind Instagram Stories, Facebook Stories, WhatsApp
-            Stories, the whole Meta story ecosystem. Billions of people touched that work every day,
-            though most never knew it existed. That&apos;s kind of the point.
+            From there I joined <strong>Facebook</strong>, early on the team that built Stories. I wrote
+            ML ranking systems, the code that decides what content surfaces and when. It ran at large
+            scale. I learned a lot, mostly about what breaks when you&apos;re not looking and how much
+            of engineering is just damage control.
           </p>
           <p>
-            Today I&apos;m the CEO and co-founder of <strong>Kintsugi</strong>. We&apos;ve built the
-            AI-native sales tax compliance platform for modern internet businesses. Sales tax is one of
-            the most wildly underestimated operational risks founders face, especially post-Wayfair. We
-            automate compliance across 13,000+ US jurisdictions so companies can grow without suddenly
-            discovering they owe six figures in back taxes. We just closed a strategic investment from
-            Vertex and we&apos;re not slowing down.
+            In 2021 I left to start <strong>Kintsugi</strong> with my co-founder. We build software that
+            handles sales tax compliance for internet businesses automatically. It&apos;s not a glamorous
+            problem, but it&apos;s a real one. A lot of founders find out too late that they owe
+            significant back taxes across dozens of states. We&apos;re trying to make that not happen.
           </p>
           <p>
-            The common thread across all of it, from olympiad math to big tech to running a 150 person
-            company, has been the same: find a hard, complex system, understand it at a deeper level than
-            anyone else, and build real leverage from that understanding.
+            Looking back, I&apos;ve been in a lot of places at the right time. The honest version is that
+            luck played a big role. I just tried to take it seriously when it showed up.
           </p>
           <p>
-            When I&apos;m not building, I&apos;m usually wandering some neighborhood with a camera,
-            riding my bike across the Golden Gate, cooking something that takes too long, or going too
-            deep on mechanical keyboards and fountain pens. No apologies.
+            When I&apos;m not working, I&apos;m usually wandering some neighborhood with a camera,
+            riding my bike across the Golden Gate, cooking something that takes too long, or going down
+            a rabbit hole on mechanical keyboards and fountain pens.
           </p>
           <p>
-            I believe in doing hard things. I believe in craft. And I believe the long road is usually
-            the right one.
+            Still figuring most of it out, honestly.
           </p>
         </div>
         <div className="about-facts">
@@ -67,7 +61,7 @@ export default function About() {
           </div>
           <div className="fact-row">
             <span className="fact-label">Undergrad</span>
-            <span className="fact-value">Georgia Tech — Computer Engineering</span>
+            <span className="fact-value">Georgia Tech, Computer Engineering</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Minors</span>
@@ -78,20 +72,16 @@ export default function About() {
             <span className="fact-value">Stanford MS CS (AI)</span>
           </div>
           <div className="fact-row">
-            <span className="fact-label">Also Studied</span>
-            <span className="fact-value">Harvard Business School (Did Not Graduate) · MIT (Lecturer)</span>
+            <span className="fact-label">Also</span>
+            <span className="fact-value">Harvard Business School (left early) · MIT Lecturer</span>
           </div>
           <div className="fact-row">
-            <span className="fact-label">Gold Medal</span>
-            <span className="fact-value">International Math Olympiad</span>
-          </div>
-          <div className="fact-row">
-            <span className="fact-label">Silver Medal</span>
-            <span className="fact-value">International Informatics Olympiad</span>
+            <span className="fact-label">Olympiads</span>
+            <span className="fact-value">Gold: Math · Silver: Informatics</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Previously</span>
-            <span className="fact-value">Senior ML Engineer, Meta</span>
+            <span className="fact-value">ML Engineer, Meta</span>
           </div>
           <div className="fact-row">
             <span className="fact-label">Company</span>
