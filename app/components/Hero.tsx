@@ -8,9 +8,8 @@ export default function Hero() {
           <em>Bhatnagar</em>
         </h1>
         <p className="hero-bio">
-          I like hard problems. I like traveling to beautiful cities, and I like taking the long
-          way home. This website is a reflection of who I am as a person, what I like to do in
-          my spare time, and what my life journey has been so far.
+          I like traveling to beautiful cities, and I like taking the long way home. This website is a reflection of who I am as a person, what I like to do in my spare
+          time, and what my life journey has been so far.
         </p>
         <div className="hero-ctas">
           <a href="#about" className="btn-primary">Read more ↓</a>
