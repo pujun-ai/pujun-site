@@ -8,22 +8,36 @@ export default function About() {
             Builder.<br /><em>Nerd.</em><br />Photographer.
           </h2>
           <p>
-            I grew up shaped by two people: my <strong>mother and my sister</strong>. They taught me to
-            slow down and actually pay attention. To ask questions. To care about the things most people
-            gloss over. That stuck with me.
+            I grew up with my <strong>mom, sister and dad</strong>. They taught me to slow down and
+            actually pay attention. To ask questions. To care about the things most people gloss over.
+            That stuck with me.
           </p>
           <p>
             Math got me when I was a kid and never really let go. I competed for India at the{' '}
             <strong>International Mathematical Olympiad</strong>, something that sounds more impressive
             than it felt at the time. I was mostly just a nervous kid who liked numbers. I came home with
+            a <strong>Gold Medal in Mathematics</strong> and a Silver in Informatics. What those
+            competitions actually taught me was how to sit with a problem and not panic.
+          </p>
+          <p>
+            I studied Computer Science and AI at <strong>Georgia Tech</strong>, then did a Master&apos;s
+            at <strong>Stanford</strong>. I worked on ML research while I was there, mostly the
+            unglamorous stuff like making research reproducible. Some of that work was later acquired by
+            Microsoft and became part of the foundation that <strong>OpenAI</strong> was built on. I got
+            lucky that some of it turned out to matter.
+          </p>
+          <p>
+            From there I joined <strong>Facebook</strong>, early on the team that built Stories. I wrote
+            ML ranking systems, the code that decides what content surfaces and when. It ran at large
             scale. I learned a lot, mostly about what breaks when you&apos;re not looking and how much
             of engineering is just damage control.
           </p>
           <p>
-            In 2023 I left to start <strong>Kintsugi AI</strong> with my co-founder. We build software that
-            handles sales tax compliance for internet businesses automatically. It&apos;s not a glamorous
-            problem, but it&apos;s a real one. A lot of founders find out too late that they owe
-            significant back taxes across dozens of states. We&apos;re trying to make that not happen.
+            In 2023 I left to start <strong>Kintsugi AI</strong> with my co-founder. We build software
+            that handles sales tax compliance for internet businesses automatically. It&apos;s not a
+            glamorous problem, but it&apos;s a real one. A lot of founders find out too late that they
+            owe significant back taxes across dozens of states. We&apos;re trying to make that not
+            happen.
           </p>
           <p>
             Looking back, I&apos;ve been in a lot of places at the right time. The honest version is that
