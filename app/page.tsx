@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import CredentialsBar from './components/CredentialsBar'
 import About from './components/About'
 import Experience from './components/Experience'
 import Writing from './components/Writing'
@@ -65,7 +64,6 @@ export default function Home() {
       <div className="cursor-ring" ref={ringRef} />
       <Nav />
       <Hero />
-      <CredentialsBar />
       <About />
       <Experience />
       <Writing />

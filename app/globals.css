@@ -242,12 +242,14 @@ nav.scrolled {
 }
 
 .hero-right {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--ceramic-mid);
   animation: slideIn 1s ease 0.3s both;
   padding: 48px;
+  overflow: hidden;
 }
 
 /* Outer square — positions facts absolutely, reference for IntersectionObserver */
@@ -257,7 +259,7 @@ nav.scrolled {
   aspect-ratio: 1 / 1;
 }
 
-/* Circle frame — clips photo + shards to circle; sits above the crack bg layer */
+/* Circle frame */
 .hero-photo-circle {
   position: absolute;
   inset: 0;
@@ -278,206 +280,6 @@ nav.scrolled {
   opacity: 0.92;
 }
 
-/* ─── PHOTO SHARDS ──────────────────────────────────────────────────────── */
-/* Three divs that tile the full photo via background-image + clip-path.     */
-/* During animation they slide apart to show cracks, then reassemble.        */
-.shard {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: calc(50% + 5px) top;
-  opacity: 0;
-}
-
-/* Clip-path polygons match the two main edge cracks (% of 600px container).
-   Left crack:  12%,0 → 15%,20 → 10.8%,33.3 → 14.7%,53.3 → 11.7%,75 → 13.3%,103.3
-   Right crack: 85%,0 → 81.3%,20 → 85.7%,33.3 → 82%,53.3 → 86%,75 → 83.3%,103.3
-   This keeps the entire face + ears safely inside the static middle shard. */
-.shard-left {
-  clip-path: polygon(
-    0% 0%, 12% 0%,
-    15% 20%, 10.8% 33.3%, 14.7% 53.3%, 11.7% 75%, 13.3% 103.3%,
-    0% 103.3%
-  );
-}
-
-.shard-mid {
-  clip-path: polygon(
-    12% 0%, 85% 0%,
-    81.3% 20%, 85.7% 33.3%, 82% 53.3%, 86% 75%, 83.3% 103.3%,
-    13.3% 103.3%,
-    11.7% 75%, 14.7% 53.3%, 10.8% 33.3%, 15% 20%
-  );
-}
-
-.shard-right {
-  clip-path: polygon(
-    85% 0%, 100% 0%, 100% 103.3%, 83.3% 103.3%,
-    86% 75%, 82% 53.3%, 85.7% 33.3%, 81.3% 20%
-  );
-}
-
-.hero-crack-bg {
-  /* Positioned outside the circle so cracks bleed into the page background */
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: visible;
-}
-
-/* Cracks hidden by default — revealed by animation */
-.crack {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  opacity: 0;
-}
-
-/* ─── KINTSUGI FACT CARDS ───────────────────────────────────────────────── */
-.kf {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  background: rgba(20, 16, 10, 0.85);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(201, 168, 76, 0.45);
-  padding: 8px 13px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(6px);
-  z-index: 2;
-}
-
-.kf-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 8px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--warm-gray);
-}
-
-.kf-value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--gold-light);
-  line-height: 1.25;
-  white-space: nowrap;
-}
-
-/* Positioned within the circular photo area */
-.kf-1 { top: 18%;  left: 6%; }
-.kf-2 { top: 46%;  left: 16%; }
-.kf-3 { bottom: 16%; right: 6%; }
-
-/* ─── KINTSUGI ANIMATION KEYFRAMES ─────────────────────────────────────── */
-/*
-  5-second meditative loop:
-  0s   – 0.8s  silence
-  0.8s – 2.2s  cracks draw in
-  2.2s – 2.7s  facts fade in
-  2.7s – 3.7s  hold
-  3.7s – 4.2s  facts fade out
-  4.2s – 4.6s  gold ring flash (reassembly sealed)
-  4.6s – 5.0s  settle back to ambient
-*/
-
-@keyframes kintsugiCrackMain {
-  0%   { stroke-dashoffset: 1; opacity: 0; }
-  16%  { stroke-dashoffset: 1; opacity: 0; }     /* 0.8s delay  */
-  44%  { stroke-dashoffset: 0; opacity: 0.95; }  /* fully drawn  */
-  74%  { stroke-dashoffset: 0; opacity: 0.85; }  /* hold         */
-  90%  { stroke-dashoffset: 0; opacity: 0.25; }  /* fade         */
-  100% { stroke-dashoffset: 1; opacity: 0; }     /* reset        */
-}
-
-@keyframes kintsugiCrackBranch {
-  0%   { stroke-dashoffset: 1; opacity: 0; }
-  24%  { stroke-dashoffset: 1; opacity: 0; }
-  50%  { stroke-dashoffset: 0; opacity: 0.75; }
-  74%  { stroke-dashoffset: 0; opacity: 0.65; }
-  90%  { stroke-dashoffset: 0; opacity: 0.2; }
-  100% { stroke-dashoffset: 1; opacity: 0; }
-}
-
-@keyframes kintsugiFactReveal {
-  0%   { opacity: 0; transform: translateY(6px); }
-  44%  { opacity: 0; transform: translateY(6px); }
-  54%  { opacity: 1; transform: translateY(0); }
-  72%  { opacity: 1; transform: translateY(0); }
-  82%  { opacity: 0; transform: translateY(-4px); }
-  100% { opacity: 0; transform: translateY(-4px); }
-}
-
-/* Shard separation — left slides left, mid slides up, right slides right */
-@keyframes shardLeft {
-  0%   { transform: translate(0, 0); }
-  44%  { transform: translate(0, 0); }
-  56%  { transform: translate(-10px, 2px); }
-  72%  { transform: translate(-10px, 2px); }
-  86%  { transform: translate(0, 0); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes shardMid {
-  /* Face stays still — only the shoulder/edge shards peel away */
-  0%   { transform: translate(0, 0); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes shardRight {
-  0%   { transform: translate(0, 0); }
-  44%  { transform: translate(0, 0); }
-  56%  { transform: translate(10px, -2px); }
-  72%  { transform: translate(10px, -2px); }
-  86%  { transform: translate(0, 0); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes kintsugiRing {
-  0%   { box-shadow: 0 0 0 2px var(--gold-border); }
-  44%  { box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.5), 0 0 24px rgba(201, 168, 76, 0.18); }
-  74%  { box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.5), 0 0 24px rgba(201, 168, 76, 0.18); }
-  88%  { box-shadow: 0 0 0 5px var(--gold), 0 0 48px rgba(201, 168, 76, 0.55); }
-  100% { box-shadow: 0 0 0 2px var(--gold-border); }
-}
-
-/* ─── ACTIVE STATE (toggled by IntersectionObserver) ───────────────────── */
-.kintsugi-active .crack-main {
-  animation: kintsugiCrackMain 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.kintsugi-active .crack-branch {
-  animation: kintsugiCrackBranch 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.kintsugi-active .crack-hair {
-  animation: kintsugiCrackBranch 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  animation-delay: 0.4s;
-}
-
-.kintsugi-active .kf {
-  animation: kintsugiFactReveal 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.kintsugi-active .kf-2 { animation-delay: 0.15s; }
-.kintsugi-active .kf-3 { animation-delay: 0.3s; }
-
-/* Hide base img during animation; shards take over */
-.kintsugi-active .hero-photo { opacity: 0; }
-.kintsugi-active .shard { opacity: 1; }
-
-.kintsugi-active .shard-left  { animation: shardLeft  5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-.kintsugi-active .shard-mid   { animation: shardMid   5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-.kintsugi-active .shard-right { animation: shardRight 5s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-
-.kintsugi-active .hero-photo-circle {
-  animation: kintsugiRing 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
 
 .hero-stats-strip {
   grid-column: 1 / -1;
