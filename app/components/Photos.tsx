@@ -10,7 +10,8 @@ const photos = [
     wide: false,
   },
   {
-    id: 'photo-1588412079929-790b9f593d8e',
+    id: null,
+    src: '/mission-sf.jpg',
     label: 'Mission District · SF',
     wide: false,
   },
@@ -60,7 +61,7 @@ export default function Photos() {
           <div className={`photo-cell${p.wide ? ' photo-cell--wide' : ''}`} key={i}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`https://images.unsplash.com/${p.id}?w=1200&q=80&fit=crop`}
+              src={'src' in p && p.src ? p.src : `https://images.unsplash.com/${p.id}?w=1200&q=80&fit=crop`}
               alt={p.label}
               className="photo-img"
               loading="lazy"

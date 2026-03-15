@@ -92,7 +92,8 @@ export default function About() {
             <span className="fact-value">
               Vampire Weekend<br />
               Backstreet Boys<br />
-              Michael Jackson
+              Michael Jackson<br />
+              Khalid
             </span>
           </div>
           <div className="fact-row">
@@ -105,10 +106,6 @@ export default function About() {
           <div className="fact-row">
             <span className="fact-label">Favorite Bike</span>
             <span className="fact-value">Trek Domane</span>
-          </div>
-          <div className="fact-row">
-            <span className="fact-label">Favorite Music</span>
-            <span className="fact-value">Vampire Weekend · Khalid</span>
           </div>
         </div>
       </div>
