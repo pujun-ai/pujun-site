@@ -33,7 +33,7 @@ const education = [
   },
   {
     institution: 'MIT',
-    degree: 'Lecturer and Williams Fellow',
+    degree: 'Lecturer and Willems Fellow',
     detail: 'Teaching optimization and data decision making to graduate students',
   },
 ]
@@ -63,9 +63,9 @@ export default function Experience() {
       <div className="experience-list">
         {education.map((edu, i) => (
           <div className="experience-item" key={i}>
-            <div className="experience-period" style={{ minWidth: '160px' }}>{edu.institution}</div>
+            <div className="experience-period" style={{ minWidth: '160px', fontWeight: '700', fontSize: '0.95rem', letterSpacing: '0.02em' }}>{edu.institution}</div>
             <div className="experience-body">
-              <div className="experience-title">{edu.degree}</div>
+              <div className="experience-title" style={{ fontSize: '0.8rem', opacity: 0.7 }}>{edu.degree}</div>
               {edu.detail && <div className="experience-desc">{edu.detail}</div>}
             </div>
           </div>

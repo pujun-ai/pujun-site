@@ -16,19 +16,6 @@ export default function About() {
             Math got me when I was a kid and never really let go. I competed for India at the{' '}
             <strong>International Mathematical Olympiad</strong>, something that sounds more impressive
             than it felt at the time. I was mostly just a nervous kid who liked numbers. I came home with
-            a Gold Medal in Mathematics and a Silver in Informatics. What those competitions actually
-            taught me was how to sit with a problem and not panic.
-          </p>
-          <p>
-            I studied Computer Science and AI at <strong>Georgia Tech</strong>, then did a Master&apos;s
-            at <strong>Stanford</strong>. I worked on ML research while I was there, mostly the
-            unglamorous stuff, like making research reproducible. Some of that research was later
-            acquired by <strong>Microsoft</strong> and became part of the foundation that
-            <strong>OpenAI</strong> was built on. I got lucky that some of it turned out to matter.
-          </p>
-          <p>
-            From there I joined <strong>Facebook</strong>, early on the team that built Stories. I wrote
-            ML ranking systems, the code that decides what content surfaces and when. It ran at large
             scale. I learned a lot, mostly about what breaks when you&apos;re not looking and how much
             of engineering is just damage control.
           </p>
@@ -118,6 +105,10 @@ export default function About() {
           <div className="fact-row">
             <span className="fact-label">Favorite Bike</span>
             <span className="fact-value">Trek Domane</span>
+          </div>
+          <div className="fact-row">
+            <span className="fact-label">Favorite Music</span>
+            <span className="fact-value">Vampire Weekend · Khalid</span>
           </div>
         </div>
       </div>
