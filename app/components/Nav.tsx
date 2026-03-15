@@ -19,8 +19,6 @@ export default function Nav() {
         <li><a href="#experience">Experience</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="#photos">Photos</a></li>
-        <li><a href="#speaking">Speaking</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   )

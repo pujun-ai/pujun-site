@@ -8,8 +8,6 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Writing from './components/Writing'
 import Photos from './components/Photos'
-import Speaking from './components/Speaking'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 export default function Home() {
@@ -72,8 +70,6 @@ export default function Home() {
       <Experience />
       <Writing />
       <Photos />
-      <Speaking />
-      <Contact />
       <Footer />
     </>
   )

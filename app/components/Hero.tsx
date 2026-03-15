@@ -27,11 +27,8 @@ export default function Hero() {
           <em>Bhatnagar</em>
         </h1>
         <p className="hero-bio">
-          I grew up in India. Represented my country at the International Math and Informatics
-          Olympiads. Built machine learning systems used by billions. Now building Kintsugi
-          in San Francisco.
-          <br /><br />
-          I like hard problems. I like beautiful cities. I take the long way home.
+          I love traveling to beautiful cities and taking the long way home. This website is a
+          reflection of who I am, what I do in my spare time, and how I got here.
         </p>
         <div className="hero-ctas">
           <a href="#about" className="btn-primary">Read more ↓</a>

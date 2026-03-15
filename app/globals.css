@@ -1085,6 +1085,30 @@ footer {
   color: var(--gold);
 }
 
+.footer-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-icon-link {
+  color: rgba(201, 168, 76, 0.5);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.footer-icon-link:hover {
+  color: var(--gold);
+}
+
+.footer-kintsugi-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
 /* ─── ANIMATIONS ────────────────────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
