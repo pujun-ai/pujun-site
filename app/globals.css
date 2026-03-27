@@ -1,20 +1,22 @@
-/* ─── KINTSUGI THEME ─────────────────────────────────────────────────────── */
-/* Inspired by the Japanese art of repairing broken ceramics with gold lacquer */
-/* Beauty in imperfection · Resilience made visible · Darkness gilded with gold */
+/* ─── JOURNEY THEME ──────────────────────────────────────────────────────── */
+/* For someone who loves Japan, fine pens, and traveling the world           */
+/* Clean lines · Quiet adventure · The world through ink and open roads      */
 
 :root {
-  --cream: #F7F2E8;
-  --ivory: #FAF6EE;
-  --ink: #1A1510;
-  --ceramic: #1C1812;
-  --ceramic-mid: #2A2218;
-  --warm-gray: #7A7368;
-  --gold: #C9A84C;
-  --gold-light: #E8D5A0;
-  --gold-dim: rgba(201, 168, 76, 0.4);
-  --gold-border: rgba(201, 168, 76, 0.2);
-  --border: rgba(201, 168, 76, 0.15);
-  --border-light: rgba(26, 21, 16, 0.1);
+  --white: #FFFFFF;
+  --light: #F3F6FB;
+  --ink: #16213E;
+  --navy: #0A1628;
+  --navy-mid: #0E1F38;
+  --gray: #6B7280;
+  --blue: #0038B8;
+  --blue-light: #5B80D8;
+  --blue-dim: rgba(0, 56, 184, 0.4);
+  --blue-border: rgba(0, 56, 184, 0.2);
+  --border: rgba(0, 56, 184, 0.12);
+  --border-light: rgba(22, 33, 62, 0.1);
+  --red: #BC002D;
+  --red-border: rgba(188, 0, 45, 0.25);
 }
 
 * {
@@ -28,7 +30,7 @@ html {
 }
 
 body {
-  background: var(--cream);
+  background: var(--white);
   color: var(--ink);
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
@@ -41,7 +43,7 @@ body {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: var(--gold);
+  background: var(--red);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -53,7 +55,7 @@ body {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--blue);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -73,21 +75,21 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 28px 60px;
-  background: rgba(28, 24, 18, 0.94);
+  background: rgba(10, 22, 40, 0.96);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
 }
 
 nav.scrolled {
-  border-color: var(--gold-border);
+  border-color: var(--blue-border);
 }
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--blue-light);
   text-decoration: none;
 }
 
@@ -102,13 +104,13 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(247, 242, 232, 0.45);
+  color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--gold);
+  color: var(--blue-light);
 }
 
 /* ─── HERO ──────────────────────────────────────────────────────────────── */
@@ -118,8 +120,8 @@ nav.scrolled {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
   padding-top: 90px;
-  background: var(--ceramic);
-  overflow: hidden; /* contain the bleeding cracks within the hero section */
+  background: var(--navy);
+  overflow: hidden;
 }
 
 .hero-left {
@@ -128,7 +130,7 @@ nav.scrolled {
   justify-content: center;
   padding: 80px 60px;
   position: relative;
-  background: var(--ceramic);
+  background: var(--navy);
 }
 
 .hero-left::after {
@@ -141,9 +143,9 @@ nav.scrolled {
   background: linear-gradient(
     180deg,
     transparent 0%,
-    var(--gold) 30%,
-    var(--gold-light) 50%,
-    var(--gold) 70%,
+    var(--blue) 30%,
+    var(--blue-light) 50%,
+    var(--blue) 70%,
     transparent 100%
   );
   opacity: 0.55;
@@ -154,7 +156,7 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   margin-bottom: 32px;
   display: flex;
   align-items: center;
@@ -167,7 +169,7 @@ nav.scrolled {
   display: block;
   width: 40px;
   height: 1px;
-  background: var(--gold);
+  background: var(--red);
   opacity: 0.7;
 }
 
@@ -178,19 +180,19 @@ nav.scrolled {
   line-height: 0.95;
   letter-spacing: -0.01em;
   margin-bottom: 40px;
-  color: var(--cream);
+  color: var(--white);
   animation: fadeUp 0.8s ease 0.25s both;
 }
 
 .hero-name em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--red);
 }
 
 .hero-bio {
   font-size: 15px;
   line-height: 1.8;
-  color: rgba(247, 242, 232, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   max-width: 420px;
   margin-bottom: 56px;
   animation: fadeUp 0.8s ease 0.4s both;
@@ -207,8 +209,8 @@ nav.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--gold);
-  color: var(--ceramic);
+  background: var(--blue);
+  color: var(--white);
   padding: 14px 28px;
   font-family: 'DM Mono', monospace;
   font-size: 11px;
@@ -220,7 +222,7 @@ nav.scrolled {
 }
 
 .btn-primary:hover {
-  background: var(--gold-light);
+  background: var(--blue-light);
   transform: translateY(-1px);
 }
 
@@ -229,16 +231,16 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(247, 242, 232, 0.35);
+  color: rgba(255, 255, 255, 0.35);
   text-decoration: none;
-  border-bottom: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--blue-border);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
 
 .btn-secondary:hover {
-  color: var(--gold);
-  border-color: var(--gold);
+  color: var(--blue-light);
+  border-color: var(--blue-light);
 }
 
 .hero-right {
@@ -246,7 +248,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ceramic-mid);
+  background: var(--navy-mid);
   animation: slideIn 1s ease 0.3s both;
   padding: 48px;
   overflow: hidden;
@@ -265,7 +267,7 @@ nav.scrolled {
   inset: 0;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 0 2px var(--gold-border);
+  box-shadow: 0 0 0 2px var(--blue-border);
   transition: box-shadow 0.6s ease;
   z-index: 1;
 }
@@ -285,8 +287,8 @@ nav.scrolled {
 .hero-stats-strip {
   grid-column: 1 / -1;
   display: flex;
-  border-top: 1px solid var(--gold-border);
-  background: var(--ceramic-mid);
+  border-top: 1px solid var(--blue-border);
+  background: var(--navy-mid);
 }
 
 .hero-stat-col {
@@ -295,7 +297,7 @@ nav.scrolled {
   flex-direction: column;
   gap: 6px;
   padding: 24px 40px;
-  border-left: 1px solid var(--gold-border);
+  border-left: 1px solid var(--blue-border);
 }
 
 .hero-stat-col:first-child {
@@ -307,22 +309,22 @@ nav.scrolled {
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: var(--gray);
 }
 
 .hero-stat-value {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   font-weight: 300;
-  color: var(--gold-light);
+  color: var(--blue-light);
   line-height: 1.3;
 }
 
 /* ─── CREDENTIALS BAR ───────────────────────────────────────────────────── */
 .credentials-bar {
-  background: var(--ceramic);
-  border-top: 1px solid var(--gold-border);
-  border-bottom: 1px solid var(--gold-border);
+  background: var(--navy);
+  border-top: 1px solid var(--blue-border);
+  border-bottom: 1px solid var(--blue-border);
   padding: 20px 60px;
   display: flex;
   align-items: center;
@@ -336,7 +338,7 @@ nav.scrolled {
   align-items: center;
   gap: 12px;
   padding: 8px 40px;
-  border-right: 1px solid var(--gold-border);
+  border-right: 1px solid var(--blue-border);
   white-space: nowrap;
 }
 
@@ -347,10 +349,10 @@ nav.scrolled {
 .cred-dot {
   width: 5px;
   height: 5px;
-  background: var(--gold);
+  background: var(--red);
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(201, 168, 76, 0.5);
+  box-shadow: 0 0 6px rgba(188, 0, 45, 0.55);
 }
 
 .cred-text {
@@ -358,11 +360,11 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(247, 242, 232, 0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .cred-text strong {
-  color: var(--gold-light);
+  color: var(--blue-light);
   font-weight: 400;
 }
 
@@ -376,7 +378,7 @@ section {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -388,7 +390,7 @@ section {
   display: block;
   flex: 1;
   height: 1px;
-  background: var(--gold-border);
+  background: var(--blue-border);
   max-width: 80px;
 }
 
@@ -401,14 +403,17 @@ section {
 }
 
 .section-title em {
-  color: var(--gold);
+  color: var(--blue);
   font-style: italic;
 }
 
 /* ─── ABOUT ─────────────────────────────────────────────────────────────── */
 .about-section {
-  background: var(--ivory);
+  background: var(--white);
   position: relative;
+  /* Subtle dot-grid — evokes fountain pen notebook paper (Hobonichi / Midori) */
+  background-image: radial-gradient(circle, rgba(0, 56, 184, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 .about-section::before {
@@ -418,8 +423,8 @@ section {
   left: 60px;
   right: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.35;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: 0.4;
 }
 
 .about-grid {
@@ -432,7 +437,7 @@ section {
 .about-text p {
   font-size: 16px;
   line-height: 1.9;
-  color: var(--warm-gray);
+  color: var(--gray);
   margin-bottom: 20px;
 }
 
@@ -460,7 +465,7 @@ section {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: var(--gray);
 }
 
 .fact-value {
@@ -501,18 +506,18 @@ section {
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(247, 242, 232, 0.7);
-  text-shadow: 0 1px 8px rgba(20, 16, 10, 0.9);
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 8px rgba(10, 22, 40, 0.9);
 }
 
 /* ─── EXPERIENCE ────────────────────────────────────────────────────────── */
 .experience-section {
-  background: var(--ceramic);
+  background: var(--navy);
   position: relative;
 }
 
 .experience-section .section-title {
-  color: var(--cream);
+  color: var(--white);
 }
 
 .experience-list {
@@ -526,7 +531,7 @@ section {
   grid-template-columns: 160px 1fr 140px;
   align-items: start;
   padding: 40px 0;
-  border-bottom: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--blue-border);
   gap: 40px;
   transition: opacity 0.2s;
 }
@@ -543,7 +548,7 @@ section {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: rgba(201, 168, 76, 0.45);
+  color: rgba(91, 128, 216, 0.55);
   padding-top: 5px;
 }
 
@@ -552,7 +557,7 @@ section {
   font-size: 26px;
   font-weight: 400;
   margin-bottom: 6px;
-  color: var(--cream);
+  color: var(--white);
 }
 
 .experience-company {
@@ -560,14 +565,14 @@ section {
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue-light);
   margin-bottom: 14px;
 }
 
 .experience-desc {
   font-size: 14px;
   line-height: 1.8;
-  color: rgba(247, 242, 232, 0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .experience-badge {
@@ -575,18 +580,21 @@ section {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue-light);
   text-align: right;
   padding: 6px 10px;
-  border: 1px solid var(--gold-border);
+  border: 1px solid var(--blue-border);
   align-self: start;
   justify-self: end;
 }
 
 /* ─── WRITING ───────────────────────────────────────────────────────────── */
 .writing-section {
-  background: var(--cream);
+  background: var(--white);
   padding: 120px 0;
+  /* Dot-grid carries through to writing section — same notebook aesthetic */
+  background-image: radial-gradient(circle, rgba(0, 56, 184, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 .writing-header {
@@ -601,10 +609,10 @@ section {
 }
 
 .blog-card {
-  background: var(--ivory);
+  background: var(--light);
   padding: 40px;
   cursor: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
   border: 1px solid transparent;
@@ -617,7 +625,7 @@ section {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--blue);
   transition: width 0.5s ease;
 }
 
@@ -627,7 +635,8 @@ section {
 
 .blog-card:hover {
   transform: translateY(-4px);
-  border-color: var(--gold-border);
+  border-color: var(--blue-border);
+  box-shadow: 0 8px 32px rgba(0, 56, 184, 0.08);
 }
 
 .blog-tag {
@@ -635,7 +644,7 @@ section {
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue);
   margin-bottom: 16px;
 }
 
@@ -651,7 +660,7 @@ section {
 .blog-excerpt {
   font-size: 13px;
   line-height: 1.7;
-  color: var(--warm-gray);
+  color: var(--gray);
   margin-bottom: 32px;
 }
 
@@ -659,14 +668,14 @@ section {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(122, 115, 104, 0.55);
+  color: rgba(107, 114, 128, 0.55);
   display: flex;
   justify-content: space-between;
 }
 
 /* ─── PHOTOS ────────────────────────────────────────────────────────────── */
 .photos-section {
-  background: var(--ceramic);
+  background: var(--navy);
   padding: 120px 60px;
   position: relative;
 }
@@ -678,13 +687,13 @@ section {
   left: 60px;
   right: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.25;
+  background: linear-gradient(90deg, transparent, var(--blue), transparent);
+  opacity: 0.3;
 }
 
-.photos-section .section-label { color: var(--gold); }
-.photos-section .section-label::after { background: var(--gold-border); }
-.photos-section .section-title { color: var(--cream); }
+.photos-section .section-label { color: var(--blue-light); }
+.photos-section .section-label::after { background: var(--blue-border); }
+.photos-section .section-title { color: var(--white); }
 
 .photo-grid {
   display: grid;
@@ -696,7 +705,7 @@ section {
 .photo-cell {
   overflow: hidden;
   position: relative;
-  background: var(--ceramic-mid);
+  background: var(--navy-mid);
 }
 
 .photo-cell--wide {
@@ -726,14 +735,14 @@ section {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(240, 224, 160, 0.75);
-  text-shadow: 0 1px 8px rgba(20, 16, 10, 0.9);
+  color: rgba(147, 179, 255, 0.8);
+  text-shadow: 0 1px 8px rgba(10, 22, 40, 0.9);
   pointer-events: none;
 }
 
 /* ─── SPEAKING ──────────────────────────────────────────────────────────── */
 .speaking-section {
-  background: var(--ivory);
+  background: var(--light);
   position: relative;
 }
 
@@ -759,7 +768,7 @@ section {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: var(--red);
 }
 
 .speaking-title {
@@ -774,13 +783,13 @@ section {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--warm-gray);
+  color: var(--gray);
   text-align: right;
 }
 
 /* ─── CONTACT ───────────────────────────────────────────────────────────── */
 .contact-section {
-  background: var(--ceramic);
+  background: var(--navy);
   padding: 120px 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -797,23 +806,23 @@ section {
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 56, 184, 0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.contact-section .section-label { color: var(--gold); }
-.contact-section .section-label::after { background: var(--gold-border); }
+.contact-section .section-label { color: var(--blue-light); }
+.contact-section .section-label::after { background: var(--blue-border); }
 
 .contact-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(42px, 5vw, 72px);
   font-weight: 300;
-  color: var(--cream);
+  color: var(--white);
   line-height: 1.05;
 }
 
 .contact-title em {
-  color: var(--gold);
+  color: var(--blue-light);
   font-style: italic;
 }
 
@@ -827,15 +836,15 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 22px 0;
-  border-bottom: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--blue-border);
   text-decoration: none;
-  color: rgba(247, 242, 232, 0.55);
+  color: rgba(255, 255, 255, 0.55);
   transition: padding-left 0.3s, color 0.2s;
 }
 
 .contact-link:hover {
   padding-left: 12px;
-  color: var(--gold);
+  color: var(--blue-light);
 }
 
 .contact-link-label {
@@ -847,7 +856,7 @@ section {
 
 .contact-link-arrow {
   font-size: 18px;
-  color: var(--gold);
+  color: var(--blue-light);
   opacity: 0.4;
   transition: opacity 0.2s;
 }
@@ -856,36 +865,36 @@ section {
 
 /* ─── FOOTER ────────────────────────────────────────────────────────────── */
 footer {
-  background: var(--ceramic);
+  background: var(--navy);
   padding: 36px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--gold-border);
+  border-top: 1px solid var(--blue-border);
 }
 
 .footer-copy {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(247, 242, 232, 0.2);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .footer-built {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(201, 168, 76, 0.3);
+  color: rgba(91, 128, 216, 0.35);
 }
 
 .footer-built a {
-  color: rgba(201, 168, 76, 0.5);
+  color: rgba(91, 128, 216, 0.55);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-built a:hover {
-  color: var(--gold);
+  color: var(--blue-light);
 }
 
 .footer-icons {
@@ -895,7 +904,7 @@ footer {
 }
 
 .footer-icon-link {
-  color: rgba(201, 168, 76, 0.5);
+  color: rgba(91, 128, 216, 0.55);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -903,7 +912,7 @@ footer {
 }
 
 .footer-icon-link:hover {
-  color: var(--gold);
+  color: var(--blue-light);
 }
 
 .footer-kintsugi-link {
@@ -933,7 +942,7 @@ footer {
   .hero-photo-outer { width: min(280px, 80vw); }
   .hero-left { padding: 60px 24px; }
   .hero-stats-strip { flex-direction: column; }
-  .hero-stat-col { border-left: none; border-top: 1px solid var(--gold-border); }
+  .hero-stat-col { border-left: none; border-top: 1px solid var(--blue-border); }
   .hero-stat-col:first-child { border-top: none; }
   .hero-left::after { display: none; }
   .kf { display: none; } /* Facts shown in stats strip on mobile */
