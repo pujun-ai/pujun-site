@@ -5,7 +5,6 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
-import Writing from './components/Writing'
 import Photos from './components/Photos'
 import Footer from './components/Footer'
 
@@ -40,7 +39,7 @@ export default function Home() {
     document.addEventListener('mousemove', onMouseMove)
     animFrame = requestAnimationFrame(animateRing)
 
-    const hoverEls = document.querySelectorAll('a, button, .blog-card')
+    const hoverEls = document.querySelectorAll('a, button')
     hoverEls.forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.style.transform = 'translate(-50%, -50%) scale(2.5)'
@@ -66,7 +65,6 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
-      <Writing />
       <Photos />
       <Footer />
     </>
