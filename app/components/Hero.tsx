@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-left">
-        <div className="hero-eyebrow">CEO &amp; Co-founder, Kintsugi AI</div>
+        <div className="hero-eyebrow">San Francisco &nbsp;·&nbsp; 東京</div>
         <h1 className="hero-name">
           Pujun<br />
           <em>Bhatnagar</em>
@@ -17,8 +17,9 @@ export default function Hero() {
       </div>
 
       <div className="hero-right">
+        <div className="hero-kanji">旅</div>
         <div className="hero-photo-outer">
-          <div className="hero-photo-circle">
+          <div className="hero-photo-frame">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/profile.jpg"
@@ -31,16 +32,16 @@ export default function Hero() {
 
       <div className="hero-stats-strip">
         <div className="hero-stat-col">
-          <div className="hero-stat-label">Current pastime</div>
-          <div className="hero-stat-value">Video games, books, and biking around the city</div>
+          <div className="hero-stat-label">Now listening</div>
+          <div className="hero-stat-value">Wes Montgomery — Down Here on the Ground</div>
         </div>
         <div className="hero-stat-col">
-          <div className="hero-stat-label">Where I studied</div>
-          <div className="hero-stat-value">Georgia Tech · Stanford · MIT · Harvard</div>
+          <div className="hero-stat-label">Last visited</div>
+          <div className="hero-stat-value">Daikanyama · Tokyo</div>
         </div>
         <div className="hero-stat-col">
-          <div className="hero-stat-label">How I unwind</div>
-          <div className="hero-stat-value">Photography · Biking · Cooking · Coffee</div>
+          <div className="hero-stat-label">Currently shooting</div>
+          <div className="hero-stat-value">Fujifilm X-T6 · Acros simulation</div>
         </div>
       </div>
     </section>

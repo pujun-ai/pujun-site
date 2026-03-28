@@ -1,7 +1,7 @@
 const photos = [
   {
     id: 'photo-1540959733332-eab4deabeeaf',
-    label: 'Shibuya · Tokyo',
+    label: '渋谷 · Shibuya',
     wide: true,
   },
   {
@@ -17,32 +17,32 @@ const photos = [
   },
   {
     id: 'photo-1513407030348-c983a97b98d8',
-    label: 'Tokyo',
+    label: '東京 · Tokyo',
     wide: false,
   },
   {
     id: 'photo-1528360983277-13d401cdc186',
-    label: 'Harajuku · Tokyo',
+    label: '原宿 · Harajuku',
     wide: false,
   },
   {
     id: 'photo-1536098561742-ca998e48cbcc',
-    label: 'Tokyo',
+    label: '東京 · Tokyo',
     wide: true,
   },
   {
     id: 'photo-1503899036084-c55cdd92da26',
-    label: 'Daikanyama · Tokyo',
+    label: '代官山 · Daikanyama',
     wide: false,
   },
   {
     id: 'photo-1493976040374-85c8e12f0c0e',
-    label: 'Kyoto',
+    label: '京都 · Kyoto',
     wide: false,
   },
   {
     id: 'photo-1545569341-9eb8b30979d9',
-    label: 'Arashiyama · Kyoto',
+    label: '嵐山 · Arashiyama',
     wide: false,
   },
 ]
@@ -50,7 +50,7 @@ const photos = [
 export default function Photos() {
   return (
     <section className="photos-section" id="photos">
-      <div className="section-label">Photography</div>
+      <div className="section-label">Photography <span className="section-label-jp">写真</span></div>
       <h2 className="section-title" style={{ maxWidth: '600px' }}>
         Cities between meetings.<br />
         <em>Light between deadlines.</em><br />
