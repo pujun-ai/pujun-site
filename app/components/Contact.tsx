@@ -8,9 +8,9 @@ export default function Contact() {
   return (
     <div className="contact-section" id="contact">
       <div>
-        <div className="section-label">Contact</div>
+        <div className="section-label">Contact <span className="section-label-jp">連絡</span></div>
         <h2 className="contact-title">
-          If you are building<br />something difficult,<br />or thinking about it,<br /><em>reach out.</em>
+          For whatever reason.<br />Say hello.<br /><em>I read everything.</em>
         </h2>
       </div>
       <div className="contact-links">

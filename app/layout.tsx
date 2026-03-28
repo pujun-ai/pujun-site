@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans, DM_Mono } from 'next/font/google'
+import { Cormorant_Garamond, DM_Sans, DM_Mono, Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -19,6 +19,12 @@ const dmMono = DM_Mono({
   subsets: ['latin'],
   weight: ['300', '400'],
   variable: '--font-dm-mono',
+})
+
+const notoSerifJP = Noto_Serif_JP({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-noto-jp',
 })
 
 export const metadata: Metadata = {
@@ -46,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} ${notoSerifJP.variable}`}>
       <body>{children}</body>
     </html>
   )

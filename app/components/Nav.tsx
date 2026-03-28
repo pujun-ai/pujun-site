@@ -16,9 +16,8 @@ export default function Nav() {
       <a href="#" className="nav-logo">Pujun B.</a>
       <ul className="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#writing">Writing</a></li>
         <li><a href="#photos">Photos</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   )
