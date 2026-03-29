@@ -434,15 +434,9 @@ section {
 
 /* ─── ABOUT ─────────────────────────────────────────────────────────────── */
 .about-section {
-  /* Washed calligraphy paper — warm golden base, fractal noise grain,        */
-  /* edge vignette. Blended together so it looks like aged washi or           */
-  /* a sheet of Tomoe River paper that's been handled many times.             */
-  background-color: #DECCAA;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.48' numOctaves='8' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23p)'/%3E%3C/svg%3E"),
-    radial-gradient(ellipse at 50% 45%, transparent 15%, rgba(62, 38, 10, 0.22) 100%);
-  background-blend-mode: multiply, normal;
-  background-size: 300px 300px, 100% 100%;
+  background: var(--canvas);
+  background-image: radial-gradient(circle, rgba(140, 102, 53, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
   position: relative;
 }
 
