@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans, DM_Mono, Noto_Serif_JP } from 'next/font/google'
+import { Cormorant_Garamond, Lora, DM_Mono, Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -9,10 +9,11 @@ const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
 })
 
-const dmSans = DM_Sans({
+const lora = Lora({
   subsets: ['latin'],
-  weight: ['200', '300', '400'],
-  variable: '--font-dm-sans',
+  weight: ['400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
 })
 
 const dmMono = DM_Mono({
@@ -52,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${dmMono.variable} ${notoSerifJP.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${lora.variable} ${dmMono.variable} ${notoSerifJP.variable}`}>
       <body>{children}</body>
     </html>
   )

@@ -31,8 +31,8 @@ html {
 body {
   background: var(--canvas);
   color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Lora', serif;
+  font-weight: 400;
   overflow-x: hidden;
   cursor: none;
 }
@@ -434,11 +434,16 @@ section {
 
 /* ─── ABOUT ─────────────────────────────────────────────────────────────── */
 .about-section {
-  background: var(--canvas);
+  /* Washed calligraphy paper — warm golden base, fractal noise grain,        */
+  /* edge vignette. Blended together so it looks like aged washi or           */
+  /* a sheet of Tomoe River paper that's been handled many times.             */
+  background-color: #DECCAA;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.48' numOctaves='8' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23p)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 45%, transparent 15%, rgba(62, 38, 10, 0.22) 100%);
+  background-blend-mode: multiply, normal;
+  background-size: 300px 300px, 100% 100%;
   position: relative;
-  /* Subtle dot-grid — looks like a worn field notebook or Leuchtturm1917     */
-  background-image: radial-gradient(circle, rgba(140, 102, 53, 0.1) 1px, transparent 1px);
-  background-size: 28px 28px;
 }
 
 .about-section::before {
@@ -461,7 +466,8 @@ section {
 
 .about-text p {
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.95;
+  font-style: italic;
   color: var(--dust);
   margin-bottom: 20px;
 }
