@@ -2,7 +2,17 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-copy">© 2026 Pujun Bhatnagar</div>
-      <div className="footer-kanji">ॐ</div>
+      {/* Diya lamp — Diwali accent */}
+      <div className="footer-diya" aria-hidden="true">
+        <svg width="22" height="18" viewBox="0 0 40 30" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          {/* Flame */}
+          <path d="M26 2 Q29 8 26 12 Q23 8 26 2Z"/>
+          {/* Wick */}
+          <ellipse cx="26" cy="13.5" rx="2.5" ry="1.5"/>
+          {/* Bowl */}
+          <path d="M4 19 C3 26 10 29 20 29 C30 29 37 26 36 19 L30 13 Q26 17 20 17 Q14 17 10 13Z"/>
+        </svg>
+      </div>
       <div className="footer-icons">
         <a href="mailto:pujun@trykintsugi.com" aria-label="Email" className="footer-icon-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

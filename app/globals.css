@@ -272,19 +272,17 @@ nav.scrolled {
   z-index: 1;
 }
 
-/* Large faded Om symbol behind photo — ॐ (om) = the beginning */
-.hero-kanji {
+/* Henna mandala — mehndi decorative element behind hero photo */
+.hero-henna {
   position: absolute;
-  font-family: var(--font-noto-jp), serif;
-  font-size: 280px;
-  font-weight: 400;
+  width: 300px;
+  height: 300px;
   color: var(--canvas);
-  opacity: 0.055;
+  opacity: 0.065;
   user-select: none;
   pointer-events: none;
-  line-height: 1;
-  right: 24px;
-  bottom: 16px;
+  right: 16px;
+  bottom: 8px;
   z-index: 0;
 }
 
@@ -425,8 +423,11 @@ section {
 /* ─── ABOUT ─────────────────────────────────────────────────────────────── */
 .about-section {
   background: var(--canvas);
-  background-image: radial-gradient(circle, rgba(196, 145, 26, 0.1) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-image:
+    radial-gradient(circle, rgba(196, 145, 26, 0.13) 1px, transparent 1px),
+    radial-gradient(circle, rgba(19, 136, 8, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
+  background-position: 0 0, 14px 14px;
   position: relative;
 }
 
@@ -851,8 +852,11 @@ footer {
 /* ─── NOW ───────────────────────────────────────────────────────────────── */
 .now-section {
   background: var(--canvas);
-  background-image: radial-gradient(circle, rgba(196, 145, 26, 0.1) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-image:
+    radial-gradient(circle, rgba(196, 145, 26, 0.13) 1px, transparent 1px),
+    radial-gradient(circle, rgba(19, 136, 8, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
+  background-position: 0 0, 14px 14px;
 }
 
 .now-list {
@@ -899,12 +903,13 @@ footer {
   font-weight: 400;
 }
 
-/* ─── FOOTER OM ─────────────────────────────────────────────────────────── */
-.footer-kanji {
-  font-family: var(--font-noto-jp), serif;
-  font-size: 20px;
-  color: rgba(13, 115, 119, 0.35);
+/* ─── FOOTER DIYA ───────────────────────────────────────────────────────── */
+/* Diwali diya lamp — a quiet nod to celebration                             */
+.footer-diya {
+  color: rgba(212, 165, 51, 0.45);
   user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 /* ─── ANIMATIONS ────────────────────────────────────────────────────────── */
@@ -926,7 +931,7 @@ footer {
   .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
   .hero-right { padding: 40px 24px; min-height: 340px; }
   .hero-photo-outer { width: min(220px, 65vw); }
-  .hero-kanji { font-size: 160px; right: 12px; bottom: 8px; }
+  .hero-henna { width: 170px; height: 170px; right: 12px; bottom: 8px; }
   .hero-left { padding: 60px 24px; }
   .hero-stats-strip { flex-direction: column; }
   .hero-stat-col { border-left: none; border-top: 1px solid var(--amber-border); }
