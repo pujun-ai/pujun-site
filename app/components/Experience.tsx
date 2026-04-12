@@ -41,7 +41,7 @@ const education = [
 export default function Experience() {
   return (
     <section id="experience" className="experience-section">
-      <div className="section-label">Experience <span className="section-label-jp">経験</span></div>
+      <div className="section-label">Experience <span className="section-label-jp">अनुभव</span></div>
       <h2 className="section-title">
         Things I&apos;ve<br /><em>worked on.</em>
       </h2>
@@ -59,7 +59,7 @@ export default function Experience() {
         ))}
       </div>
 
-      <div className="section-label" style={{ marginTop: '3rem' }}>Education <span className="section-label-jp">学歴</span></div>
+      <div className="section-label" style={{ marginTop: '3rem' }}>Education <span className="section-label-jp">शिक्षा</span></div>
       <div className="experience-list">
         {education.map((edu, i) => (
           <div className="experience-item" key={i}>

@@ -1,48 +1,27 @@
 const photos = [
   {
-    id: 'photo-1540959733332-eab4deabeeaf',
-    label: '渋谷 · Shibuya',
+    src: '/team-sakura-1.jpg',
+    label: 'Sumida River · Tokyo',
     wide: true,
   },
   {
-    id: 'photo-1501594907352-04cda38ebc29',
-    label: 'San Francisco',
+    src: '/team-ueno.jpg',
+    label: 'Ueno Park · Tokyo',
     wide: false,
   },
   {
-    id: null,
-    src: '/mission-sf.jpg',
-    label: 'Mission District · SF',
+    src: '/team-shinjuku.jpg',
+    label: 'Shinjuku Gyoen · Tokyo',
     wide: false,
   },
   {
-    id: 'photo-1513407030348-c983a97b98d8',
-    label: '東京 · Tokyo',
-    wide: false,
-  },
-  {
-    id: 'photo-1528360983277-13d401cdc186',
-    label: '原宿 · Harajuku',
-    wide: false,
-  },
-  {
-    id: 'photo-1536098561742-ca998e48cbcc',
-    label: '東京 · Tokyo',
+    src: '/team-asakusa.jpg',
+    label: 'Senso-ji · Asakusa',
     wide: true,
   },
   {
-    id: 'photo-1503899036084-c55cdd92da26',
-    label: '代官山 · Daikanyama',
-    wide: false,
-  },
-  {
-    id: 'photo-1493976040374-85c8e12f0c0e',
-    label: '京都 · Kyoto',
-    wide: false,
-  },
-  {
-    id: 'photo-1545569341-9eb8b30979d9',
-    label: '嵐山 · Arashiyama',
+    src: '/team-meiji.jpg',
+    label: 'Meiji Shrine · Tokyo',
     wide: false,
   },
 ]
@@ -50,18 +29,18 @@ const photos = [
 export default function Photos() {
   return (
     <section className="photos-section" id="photos">
-      <div className="section-label">Photography <span className="section-label-jp">写真</span></div>
+      <div className="section-label">Team <span className="section-label-jp">टीम</span></div>
       <h2 className="section-title" style={{ maxWidth: '600px' }}>
-        Cities between meetings.<br />
-        <em>Light between deadlines.</em><br />
-        Proof that slowing down sharpens the mind.
+        The team that crossed an ocean.<br />
+        <em>Sakura season. All of us.</em><br />
+        The people who make it worth it.
       </h2>
       <div className="photo-grid">
         {photos.map((p, i) => (
           <div className={`photo-cell${p.wide ? ' photo-cell--wide' : ''}`} key={i}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={'src' in p && p.src ? p.src : `https://images.unsplash.com/${p.id}?w=1200&q=80&fit=crop`}
+              src={p.src}
               alt={p.label}
               className="photo-img"
               loading="lazy"

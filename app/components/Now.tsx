@@ -11,7 +11,7 @@ export default function Now() {
   return (
     <section id="now" className="now-section">
       <div className="section-label">
-        Now <span className="section-label-jp">今</span>
+        Now <span className="section-label-jp">अभी</span>
       </div>
       <div className="now-list">
         {items.map((item, i) => (

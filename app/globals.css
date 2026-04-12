@@ -1,21 +1,23 @@
-/* ─── WORN INDIGO THEME ──────────────────────────────────────────────────── */
-/* Kapital denim · Wes Montgomery on vinyl · third-wave coffee               */
-/* Natural canvas · Overdyed indigo · Aged brass · A life with good taste    */
-/* 旅 — tabi — journey                                                       */
+/* ─── KANJIVARAM THEME ───────────────────────────────────────────────────── */
+/* Silk saree · Zari gold · Peacock feather · Marigold · Celebrate India     */
+/* Warm ivory · Deep crimson · Aged gold · A life of color and richness      */
+/* ॐ — om — the beginning                                                    */
 
 :root {
-  --canvas: #EBE3D5;              /* unbleached cotton — light sections bg    */
-  --canvas-alt: #E0D6C4;          /* slightly deeper canvas — alt sections    */
-  --ink: #1C1814;                 /* near-black, warm                         */
-  --indigo: #131925;              /* overdyed indigo — dark sections          */
-  --indigo-mid: #1A2335;          /* slightly lighter indigo                  */
-  --dust: #7E7266;                /* warm dust — secondary text               */
-  --amber: #8C6635;               /* aged brass / tobacco / good espresso     */
-  --amber-light: #B8905A;         /* lighter amber — highlights               */
-  --amber-dim: rgba(140, 102, 53, 0.4);
-  --amber-border: rgba(140, 102, 53, 0.2);
-  --border: rgba(140, 102, 53, 0.12);
-  --border-light: rgba(28, 24, 20, 0.1);
+  --canvas: #FDF0DC;              /* warm ivory — aged silk                   */
+  --canvas-alt: #F5E8C8;          /* slightly deeper ivory — alt sections     */
+  --ink: #1A0808;                 /* near-black, warm crimson                 */
+  --indigo: #1C0812;              /* deep Kanjivaram crimson — dark sections  */
+  --indigo-mid: #2D1020;          /* slightly lighter maroon                  */
+  --dust: #7E6B5A;                /* warm dust — secondary text               */
+  --amber: #C4911A;               /* zari gold                                */
+  --amber-light: #D4A533;         /* lighter zari gold — highlights           */
+  --amber-dim: rgba(196, 145, 26, 0.4);
+  --amber-border: rgba(196, 145, 26, 0.2);
+  --border: rgba(196, 145, 26, 0.12);
+  --border-light: rgba(26, 8, 8, 0.1);
+  --peacock: #0D7377;             /* peacock teal — accent                    */
+  --peacock-dim: rgba(13, 115, 119, 0.15);
 }
 
 * {
@@ -282,7 +284,7 @@ nav.scrolled {
   z-index: 1;
 }
 
-/* Large faded kanji behind photo — 旅 (tabi) = journey/travel */
+/* Large faded Om symbol behind photo — ॐ (om) = the beginning */
 .hero-kanji {
   position: absolute;
   font-family: var(--font-noto-jp), serif;
@@ -897,22 +899,23 @@ footer {
   line-height: 1.3;
 }
 
-/* ─── JAPANESE LABEL ACCENT ─────────────────────────────────────────────── */
+/* ─── HINDI LABEL ACCENT ────────────────────────────────────────────────── */
 .section-label-jp {
   font-family: var(--font-noto-jp), serif;
-  font-size: 10px;
-  opacity: 0.5;
+  font-size: 11px;
+  color: var(--peacock);
+  opacity: 0.75;
   margin-left: 5px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: none;
   font-weight: 400;
 }
 
-/* ─── FOOTER KANJI ──────────────────────────────────────────────────────── */
+/* ─── FOOTER OM ─────────────────────────────────────────────────────────── */
 .footer-kanji {
   font-family: var(--font-noto-jp), serif;
-  font-size: 18px;
-  color: rgba(184, 144, 90, 0.22);
+  font-size: 20px;
+  color: rgba(13, 115, 119, 0.35);
   user-select: none;
 }
 
