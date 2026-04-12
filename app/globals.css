@@ -1,24 +1,25 @@
-/* ─── KANJIVARAM THEME ───────────────────────────────────────────────────── */
-/* Silk saree · Zari gold · Peacock feather · Marigold · Celebrate India     */
-/* Warm ivory · Deep crimson · Aged gold · A life of color and richness      */
-/* ॐ — om — the beginning                                                    */
+/* ─── PEACOCK RANGOLI THEME ──────────────────────────────────────────────── */
+/* Peacock feathers · Rangoli · Marigold · Mehndi · Celebrate India          */
+/* Deep royal blue · Peacock teal · Saffron orange · Gold — a life of color  */
+/* A rangoli is drawn at thresholds — welcome, celebration, joy              */
 
 :root {
   --canvas: #FDF0DC;              /* warm ivory — aged silk                   */
   --canvas-alt: #F5E8C8;          /* slightly deeper ivory — alt sections     */
-  --ink: #1A0808;                 /* near-black, warm crimson                 */
-  --indigo: #1C0812;              /* deep Kanjivaram crimson — dark sections  */
-  --indigo-mid: #2D1020;          /* slightly lighter maroon                  */
-  --dust: #7E6B5A;                /* warm dust — secondary text               */
-  --amber: #C4911A;               /* zari gold                                */
-  --amber-light: #D4A533;         /* lighter zari gold — highlights           */
-  --amber-dim: rgba(196, 145, 26, 0.4);
-  --amber-border: rgba(196, 145, 26, 0.2);
-  --border: rgba(196, 145, 26, 0.12);
-  --border-light: rgba(26, 8, 8, 0.1);
-  --peacock: #0D7377;             /* peacock teal — accent                    */
-  --peacock-dim: rgba(13, 115, 119, 0.15);
+  --ink: #080E3A;                 /* near-black, deep peacock blue            */
+  --indigo: #0C1446;              /* deep royal peacock blue — dark sections  */
+  --indigo-mid: #152060;          /* slightly lighter royal blue              */
+  --dust: #6E7DAB;                /* peacock blue dust — secondary text       */
+  --amber: #E65100;               /* peacock saffron orange                   */
+  --amber-light: #FF8F00;         /* peacock orange-gold — highlights         */
+  --amber-dim: rgba(230, 81, 0, 0.4);
+  --amber-border: rgba(230, 81, 0, 0.2);
+  --border: rgba(230, 81, 0, 0.12);
+  --border-light: rgba(8, 14, 58, 0.1);
+  --peacock: #00838F;             /* peacock teal — accent                    */
+  --peacock-dim: rgba(0, 131, 143, 0.15);
   --india-green: #138808;         /* Indian flag green                        */
+  --rangoli-gold: #FFB300;        /* marigold gold — rangoli accent           */
 }
 
 * {
@@ -77,7 +78,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 28px 60px;
-  background: rgba(28, 8, 18, 0.96);
+  background: rgba(12, 20, 70, 0.96);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
@@ -278,12 +279,14 @@ nav.scrolled {
   width: 300px;
   height: 300px;
   color: var(--canvas);
-  opacity: 0.065;
+  opacity: 0.12;
   user-select: none;
   pointer-events: none;
   right: 16px;
   bottom: 8px;
   z-index: 0;
+  animation: rangoliSpin 90s linear infinite;
+  transform-origin: center center;
 }
 
 .hero-photo {
@@ -365,7 +368,7 @@ nav.scrolled {
   background: var(--amber);
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(196, 145, 26, 0.6);
+  box-shadow: 0 0 6px rgba(230, 81, 0, 0.6);
 }
 
 .cred-text {
@@ -424,8 +427,8 @@ section {
 .about-section {
   background: var(--canvas);
   background-image:
-    radial-gradient(circle, rgba(196, 145, 26, 0.13) 1px, transparent 1px),
-    radial-gradient(circle, rgba(19, 136, 8, 0.06) 1px, transparent 1px);
+    radial-gradient(circle, rgba(0, 131, 143, 0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 179, 0, 0.08) 1px, transparent 1px);
   background-size: 28px 28px, 28px 28px;
   background-position: 0 0, 14px 14px;
   position: relative;
@@ -518,7 +521,7 @@ section {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(253, 240, 220, 0.7);
-  text-shadow: 0 1px 8px rgba(28, 8, 18, 0.9);
+  text-shadow: 0 1px 8px rgba(12, 20, 70, 0.9);
 }
 
 /* ─── EXPERIENCE ────────────────────────────────────────────────────────── */
@@ -559,7 +562,7 @@ section {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: rgba(212, 165, 51, 0.5);
+  color: rgba(255, 143, 0, 0.5);
   padding-top: 5px;
 }
 
@@ -663,8 +666,8 @@ section {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(212, 165, 51, 0.8);
-  text-shadow: 0 1px 8px rgba(28, 8, 18, 0.9);
+  color: rgba(255, 143, 0, 0.8);
+  text-shadow: 0 1px 8px rgba(12, 20, 70, 0.9);
   pointer-events: none;
 }
 
@@ -734,7 +737,7 @@ section {
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(196, 145, 26, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 131, 143, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -812,11 +815,11 @@ footer {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(212, 165, 51, 0.3);
+  color: rgba(255, 143, 0, 0.3);
 }
 
 .footer-built a {
-  color: rgba(212, 165, 51, 0.5);
+  color: rgba(255, 143, 0, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -832,7 +835,7 @@ footer {
 }
 
 .footer-icon-link {
-  color: rgba(212, 165, 51, 0.5);
+  color: rgba(255, 143, 0, 0.5);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -853,8 +856,8 @@ footer {
 .now-section {
   background: var(--canvas);
   background-image:
-    radial-gradient(circle, rgba(196, 145, 26, 0.13) 1px, transparent 1px),
-    radial-gradient(circle, rgba(19, 136, 8, 0.06) 1px, transparent 1px);
+    radial-gradient(circle, rgba(0, 131, 143, 0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 179, 0, 0.08) 1px, transparent 1px);
   background-size: 28px 28px, 28px 28px;
   background-position: 0 0, 14px 14px;
 }
@@ -906,7 +909,7 @@ footer {
 /* ─── FOOTER DIYA ───────────────────────────────────────────────────────── */
 /* Diwali diya lamp — a quiet nod to celebration                             */
 .footer-diya {
-  color: rgba(212, 165, 51, 0.45);
+  color: rgba(255, 143, 0, 0.5);
   user-select: none;
   display: flex;
   align-items: center;
@@ -921,6 +924,39 @@ footer {
 @keyframes slideIn {
   from { transform: translateX(40px); opacity: 0; }
   to   { transform: translateX(0); opacity: 1; }
+}
+
+/* Henna mandala slow rotation */
+@keyframes rangoliSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Floating petals rise upward */
+@keyframes petalRise {
+  0%   { transform: translateY(0) rotate(0deg);         opacity: 0;   }
+  6%   { opacity: 0.65; }
+  50%  { transform: translateY(-52vh) rotate(200deg);   }
+  94%  { opacity: 0.4; }
+  100% { transform: translateY(-108vh) rotate(400deg);  opacity: 0;   }
+}
+
+/* ─── FLOATING PETALS ───────────────────────────────────────────────────── */
+/* Petals drift upward — rangoli colors, Diwali mood                         */
+.floating-petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  bottom: -24px;
+  animation: petalRise linear infinite;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 /* ─── RESPONSIVE ────────────────────────────────────────────────────────── */
