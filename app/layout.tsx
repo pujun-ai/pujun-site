@@ -29,11 +29,11 @@ const notoSerifDevanagari = Noto_Serif_Devanagari({
 })
 
 export const metadata: Metadata = {
-  title: 'Pujun Bhatnagar — CEO, Builder, Photographer',
+  title: 'Pujun Bhatnagar, photographer and nerd',
   description:
     'Pujun Bhatnagar is the CEO & Co-founder of Kintsugi, automating sales tax compliance for modern businesses. Previously Machine Learning at Meta. Stanford, MIT, Harvard.',
   openGraph: {
-    title: 'Pujun Bhatnagar — CEO, Builder, Photographer',
+    title: 'Pujun Bhatnagar, photographer and nerd',
     description:
       'CEO & Co-founder of Kintsugi. Previously ML at Meta. Stanford, MIT, Harvard.',
     url: 'https://itspujun.com',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pujun Bhatnagar — CEO, Builder, Photographer',
+    title: 'Pujun Bhatnagar, photographer and nerd',
     description: 'CEO & Co-founder of Kintsugi. Previously ML at Meta.',
   },
 }

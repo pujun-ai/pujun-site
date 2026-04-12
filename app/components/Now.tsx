@@ -1,5 +1,5 @@
 const items = [
-  { label: 'Listening',  value: 'Wes Montgomery — Down Here on the Ground' },
+  { label: 'Listening',  value: 'Arijit Singh' },
   { label: 'Coffee',     value: 'Wrecking Ball SF — single origin pour over' },
   { label: 'Riding',     value: 'Marin Headlands loop on the Trek Domane' },
   { label: 'Pen',        value: 'TWSBI Eco T, Pilot Iroshizuku ink' },
