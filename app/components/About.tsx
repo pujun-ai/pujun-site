@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section id="about" className="about-section">
-      <div className="section-label">About <span className="section-label-jp">自分について</span></div>
+      <div className="section-label">About <span className="section-label-jp">परिचय</span></div>
       <div className="about-grid">
         <div className="about-text">
           <h2 className="section-title">
