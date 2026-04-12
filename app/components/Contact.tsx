@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div className="contact-section" id="contact">
       <div>
-        <div className="section-label">Contact <span className="section-label-jp">連絡</span></div>
+        <div className="section-label">Contact <span className="section-label-jp">संपर्क</span></div>
         <h2 className="contact-title">
           For whatever reason.<br />Say hello.<br /><em>I read everything.</em>
         </h2>

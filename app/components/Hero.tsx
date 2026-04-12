@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-left">
-        <div className="hero-eyebrow">San Francisco &nbsp;·&nbsp; 東京</div>
+        <div className="hero-eyebrow">San Francisco &nbsp;·&nbsp; Mumbai</div>
         <h1 className="hero-name">
           Pujun<br />
           <em>Bhatnagar</em>
@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-right">
-        <div className="hero-kanji">旅</div>
+        <div className="hero-kanji">ॐ</div>
         <div className="hero-photo-outer">
           <div className="hero-photo-frame">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -37,7 +37,7 @@ export default function Hero() {
         </div>
         <div className="hero-stat-col">
           <div className="hero-stat-label">Last visited</div>
-          <div className="hero-stat-value">Daikanyama · Tokyo</div>
+          <div className="hero-stat-value">Mumbai · India</div>
         </div>
         <div className="hero-stat-col">
           <div className="hero-stat-label">Currently shooting</div>
