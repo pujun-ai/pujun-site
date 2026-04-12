@@ -18,6 +18,7 @@
   --border-light: rgba(26, 8, 8, 0.1);
   --peacock: #0D7377;             /* peacock teal — accent                    */
   --peacock-dim: rgba(13, 115, 119, 0.15);
+  --india-green: #138808;         /* Indian flag green                        */
 }
 
 * {
@@ -36,11 +37,24 @@ body {
   font-family: 'Lora', serif;
   font-weight: 400;
   overflow-x: hidden;
-  cursor: none;
+}
+
+/* ─── INDIA TRICOLOR STRIPE ─────────────────────────────────────────────── */
+/* Saffron · White · India Green — a quiet nod to home                       */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
+  z-index: 10000;
+  pointer-events: none;
 }
 
 /* ─── GRAIN TEXTURE OVERLAY ─────────────────────────────────────────────── */
-/* Sits above everything except the cursor. Gives canvas sections            */
+/* Sits above everything except the stripe. Gives canvas sections            */
 /* the feel of aged paper or unbleached cotton — analog warmth.              */
 body::after {
   content: '';
@@ -50,32 +64,6 @@ body::after {
   z-index: 9997;
   opacity: 0.028;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ─── CUSTOM CURSOR ─────────────────────────────────────────────────────── */
-.cursor {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background: var(--amber);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--amber);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.4s ease, opacity 0.3s;
-  transform: translate(-50%, -50%);
-  opacity: 0.35;
 }
 
 /* ─── NAV ───────────────────────────────────────────────────────────────── */
@@ -89,7 +77,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 28px 60px;
-  background: rgba(19, 25, 37, 0.96);
+  background: rgba(28, 8, 18, 0.96);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
@@ -118,7 +106,7 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(235, 227, 213, 0.4);
+  color: rgba(253, 240, 220, 0.4);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -206,7 +194,7 @@ nav.scrolled {
 .hero-bio {
   font-size: 15px;
   line-height: 1.8;
-  color: rgba(235, 227, 213, 0.5);
+  color: rgba(253, 240, 220, 0.5);
   max-width: 420px;
   margin-bottom: 56px;
   animation: fadeUp 0.8s ease 0.4s both;
@@ -245,7 +233,7 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(235, 227, 213, 0.35);
+  color: rgba(253, 240, 220, 0.35);
   text-decoration: none;
   border-bottom: 1px solid var(--amber-border);
   padding-bottom: 2px;
@@ -379,7 +367,7 @@ nav.scrolled {
   background: var(--amber);
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(140, 102, 53, 0.6);
+  box-shadow: 0 0 6px rgba(196, 145, 26, 0.6);
 }
 
 .cred-text {
@@ -387,7 +375,7 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(235, 227, 213, 0.35);
+  color: rgba(253, 240, 220, 0.35);
 }
 
 .cred-text strong {
@@ -437,7 +425,7 @@ section {
 /* ─── ABOUT ─────────────────────────────────────────────────────────────── */
 .about-section {
   background: var(--canvas);
-  background-image: radial-gradient(circle, rgba(140, 102, 53, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(196, 145, 26, 0.1) 1px, transparent 1px);
   background-size: 28px 28px;
   position: relative;
 }
@@ -528,8 +516,8 @@ section {
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(235, 227, 213, 0.7);
-  text-shadow: 0 1px 8px rgba(19, 25, 37, 0.9);
+  color: rgba(253, 240, 220, 0.7);
+  text-shadow: 0 1px 8px rgba(28, 8, 18, 0.9);
 }
 
 /* ─── EXPERIENCE ────────────────────────────────────────────────────────── */
@@ -570,7 +558,7 @@ section {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: rgba(184, 144, 90, 0.5);
+  color: rgba(212, 165, 51, 0.5);
   padding-top: 5px;
 }
 
@@ -594,7 +582,7 @@ section {
 .experience-desc {
   font-size: 14px;
   line-height: 1.8;
-  color: rgba(235, 227, 213, 0.4);
+  color: rgba(253, 240, 220, 0.4);
 }
 
 .experience-badge {
@@ -674,8 +662,8 @@ section {
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(184, 144, 90, 0.8);
-  text-shadow: 0 1px 8px rgba(19, 25, 37, 0.9);
+  color: rgba(212, 165, 51, 0.8);
+  text-shadow: 0 1px 8px rgba(28, 8, 18, 0.9);
   pointer-events: none;
 }
 
@@ -745,7 +733,7 @@ section {
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(140, 102, 53, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(196, 145, 26, 0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -777,7 +765,7 @@ section {
   padding: 22px 0;
   border-bottom: 1px solid var(--amber-border);
   text-decoration: none;
-  color: rgba(235, 227, 213, 0.5);
+  color: rgba(253, 240, 220, 0.5);
   transition: padding-left 0.3s, color 0.2s;
 }
 
@@ -816,18 +804,18 @@ footer {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(235, 227, 213, 0.2);
+  color: rgba(253, 240, 220, 0.2);
 }
 
 .footer-built {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: rgba(184, 144, 90, 0.3);
+  color: rgba(212, 165, 51, 0.3);
 }
 
 .footer-built a {
-  color: rgba(184, 144, 90, 0.5);
+  color: rgba(212, 165, 51, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -843,7 +831,7 @@ footer {
 }
 
 .footer-icon-link {
-  color: rgba(184, 144, 90, 0.5);
+  color: rgba(212, 165, 51, 0.5);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -863,7 +851,7 @@ footer {
 /* ─── NOW ───────────────────────────────────────────────────────────────── */
 .now-section {
   background: var(--canvas);
-  background-image: radial-gradient(circle, rgba(140, 102, 53, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(196, 145, 26, 0.1) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -903,7 +891,7 @@ footer {
 .section-label-jp {
   font-family: var(--font-noto-jp), serif;
   font-size: 11px;
-  color: var(--peacock);
+  color: var(--india-green);
   opacity: 0.75;
   margin-left: 5px;
   letter-spacing: 0.03em;
