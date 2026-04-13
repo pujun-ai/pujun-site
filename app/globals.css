@@ -1,25 +1,25 @@
-/* ─── PEACOCK RANGOLI THEME ──────────────────────────────────────────────── */
+/* ─── TURQUOISE PEACOCK THEME ────────────────────────────────────────────── */
 /* Peacock feathers · Rangoli · Marigold · Mehndi · Celebrate India          */
-/* Deep royal blue · Peacock teal · Saffron orange · Gold — a life of color  */
+/* Deep teal · Bright turquoise · Marigold gold — ink on handmade paper      */
 /* A rangoli is drawn at thresholds — welcome, celebration, joy              */
 
 :root {
-  --canvas: #FDF0DC;              /* warm ivory — aged silk                   */
-  --canvas-alt: #F5E8C8;          /* slightly deeper ivory — alt sections     */
-  --ink: #080E3A;                 /* near-black, deep peacock blue            */
-  --indigo: #0C1446;              /* deep royal peacock blue — dark sections  */
-  --indigo-mid: #152060;          /* slightly lighter royal blue              */
-  --dust: #6E7DAB;                /* peacock blue dust — secondary text       */
-  --amber: #E65100;               /* peacock saffron orange                   */
-  --amber-light: #FF8F00;         /* peacock orange-gold — highlights         */
-  --amber-dim: rgba(230, 81, 0, 0.4);
-  --amber-border: rgba(230, 81, 0, 0.2);
-  --border: rgba(230, 81, 0, 0.12);
-  --border-light: rgba(8, 14, 58, 0.1);
-  --peacock: #00838F;             /* peacock teal — accent                    */
-  --peacock-dim: rgba(0, 131, 143, 0.15);
+  --canvas: #FDF0DC;              /* warm ivory — handmade paper              */
+  --canvas-alt: #F5E8C8;          /* slightly deeper paper — alt sections     */
+  --ink: #062424;                 /* near-black, deep teal                    */
+  --indigo: #012626;              /* deepest teal — dark sections             */
+  --indigo-mid: #013838;          /* mid teal dark                            */
+  --dust: #3D7575;                /* muted turquoise — secondary text         */
+  --amber: #00AAAA;               /* turquoise — primary accent               */
+  --amber-light: #00C8C8;         /* lighter turquoise — highlights           */
+  --amber-dim: rgba(0, 170, 170, 0.4);
+  --amber-border: rgba(0, 170, 170, 0.2);
+  --border: rgba(0, 170, 170, 0.12);
+  --border-light: rgba(6, 36, 36, 0.1);
+  --peacock: #009090;             /* peacock teal — deeper turquoise accent   */
+  --peacock-dim: rgba(0, 144, 144, 0.15);
   --india-green: #138808;         /* Indian flag green                        */
-  --rangoli-gold: #FFB300;        /* marigold gold — rangoli accent           */
+  --rangoli-gold: #C8960E;        /* marigold gold — warm complement          */
 }
 
 * {
@@ -35,7 +35,7 @@ html {
 body {
   background: var(--canvas);
   color: var(--ink);
-  font-family: 'Lora', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   overflow-x: hidden;
 }
@@ -63,7 +63,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 9997;
-  opacity: 0.028;
+  opacity: 0.055;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -78,7 +78,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 28px 60px;
-  background: rgba(12, 20, 70, 0.96);
+  background: rgba(1, 38, 38, 0.96);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
@@ -103,9 +103,10 @@ nav.scrolled {
 }
 
 .nav-links a {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: rgba(253, 240, 220, 0.4);
   text-decoration: none;
@@ -155,9 +156,10 @@ nav.scrolled {
 }
 
 .hero-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--amber-light);
   margin-bottom: 32px;
@@ -215,9 +217,10 @@ nav.scrolled {
   background: var(--amber);
   color: var(--canvas);
   padding: 14px 28px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 400;
@@ -230,9 +233,10 @@ nav.scrolled {
 }
 
 .btn-secondary {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: rgba(253, 240, 220, 0.35);
   text-decoration: none;
@@ -321,9 +325,10 @@ nav.scrolled {
 }
 
 .hero-stat-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--dust);
 }
@@ -368,13 +373,13 @@ nav.scrolled {
   background: var(--amber);
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 0 6px rgba(230, 81, 0, 0.6);
+  box-shadow: 0 0 6px rgba(0, 170, 170, 0.6);
 }
 
 .cred-text {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(253, 240, 220, 0.35);
 }
@@ -390,9 +395,10 @@ section {
 }
 
 .section-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--amber);
   margin-bottom: 16px;
@@ -427,7 +433,7 @@ section {
 .about-section {
   background: var(--canvas);
   background-image:
-    radial-gradient(circle, rgba(0, 131, 143, 0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 170, 170, 0.12) 1px, transparent 1px),
     radial-gradient(circle, rgba(255, 179, 0, 0.08) 1px, transparent 1px);
   background-size: 28px 28px, 28px 28px;
   background-position: 0 0, 14px 14px;
@@ -475,9 +481,10 @@ section {
 }
 
 .fact-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--dust);
 }
@@ -516,12 +523,12 @@ section {
   position: absolute;
   bottom: 20px;
   left: 24px;
-  font-family: 'DM Mono', monospace;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(253, 240, 220, 0.7);
-  text-shadow: 0 1px 8px rgba(12, 20, 70, 0.9);
+  text-shadow: 0 1px 8px rgba(1, 38, 38, 0.9);
 }
 
 /* ─── EXPERIENCE ────────────────────────────────────────────────────────── */
@@ -559,10 +566,11 @@ section {
 }
 
 .experience-period {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: rgba(255, 143, 0, 0.5);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: rgba(0, 200, 200, 0.5);
   padding-top: 5px;
 }
 
@@ -575,9 +583,9 @@ section {
 }
 
 .experience-company {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.14em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--amber-light);
   margin-bottom: 14px;
@@ -590,9 +598,10 @@ section {
 }
 
 .experience-badge {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--amber-light);
   text-align: right;
@@ -662,12 +671,13 @@ section {
   position: absolute;
   bottom: 16px;
   left: 16px;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 143, 0, 0.8);
-  text-shadow: 0 1px 8px rgba(12, 20, 70, 0.9);
+  color: rgba(0, 200, 200, 0.8);
+  text-shadow: 0 1px 8px rgba(1, 38, 38, 0.9);
   pointer-events: none;
 }
 
@@ -696,9 +706,10 @@ section {
 .speaking-list:hover .speaking-item:hover { opacity: 1; }
 
 .speaking-year {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.06em;
   color: var(--amber);
 }
 
@@ -710,9 +721,10 @@ section {
 }
 
 .speaking-venue {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--dust);
   text-align: right;
@@ -737,7 +749,7 @@ section {
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(0, 131, 143, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 170, 170, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -779,9 +791,10 @@ section {
 }
 
 .contact-link-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 
@@ -805,21 +818,23 @@ footer {
 }
 
 .footer-copy {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.06em;
   color: rgba(253, 240, 220, 0.2);
 }
 
 .footer-built {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  color: rgba(255, 143, 0, 0.3);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  color: rgba(0, 200, 200, 0.3);
 }
 
 .footer-built a {
-  color: rgba(255, 143, 0, 0.5);
+  color: rgba(0, 200, 200, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -835,7 +850,7 @@ footer {
 }
 
 .footer-icon-link {
-  color: rgba(255, 143, 0, 0.5);
+  color: rgba(0, 200, 200, 0.5);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -847,16 +862,17 @@ footer {
 }
 
 .footer-kintsugi-link {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.06em;
 }
 
 /* ─── NOW ───────────────────────────────────────────────────────────────── */
 .now-section {
   background: var(--canvas);
   background-image:
-    radial-gradient(circle, rgba(0, 131, 143, 0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 170, 170, 0.12) 1px, transparent 1px),
     radial-gradient(circle, rgba(255, 179, 0, 0.08) 1px, transparent 1px);
   background-size: 28px 28px, 28px 28px;
   background-position: 0 0, 14px 14px;
@@ -877,9 +893,10 @@ footer {
 }
 
 .now-item-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--dust);
   width: 120px;
@@ -909,7 +926,7 @@ footer {
 /* ─── FOOTER DIYA ───────────────────────────────────────────────────────── */
 /* Diwali diya lamp — a quiet nod to celebration                             */
 .footer-diya {
-  color: rgba(255, 143, 0, 0.5);
+  color: rgba(0, 200, 200, 0.5);
   user-select: none;
   display: flex;
   align-items: center;
