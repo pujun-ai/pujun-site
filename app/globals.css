@@ -279,19 +279,18 @@ nav.scrolled {
 }
 
 /* Henna mandala — mehndi decorative element behind hero photo */
-.hero-henna {
+.hero-peacock {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 420px;
   color: var(--canvas);
-  opacity: 0.12;
+  opacity: 0.13;
   user-select: none;
   pointer-events: none;
-  right: 16px;
-  bottom: 8px;
+  right: -30px;
+  bottom: -20px;
   z-index: 0;
-  animation: rangoliSpin 90s linear infinite;
-  transform-origin: center center;
+  animation: peacockShimmer 10s ease-in-out infinite;
+  transform-origin: bottom right;
 }
 
 .hero-photo {
@@ -1066,9 +1065,10 @@ footer .feather-bg {
 }
 
 /* Henna mandala slow rotation */
-@keyframes rangoliSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+@keyframes peacockShimmer {
+  0%   { opacity: 0.10; transform: scale(1);    }
+  50%  { opacity: 0.20; transform: scale(1.03); }
+  100% { opacity: 0.10; transform: scale(1);    }
 }
 
 /* Floating petals rise upward */
@@ -1106,7 +1106,7 @@ footer .feather-bg {
   .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
   .hero-right { padding: 40px 24px; min-height: 340px; }
   .hero-photo-outer { width: min(220px, 65vw); }
-  .hero-henna { width: 170px; height: 170px; right: 12px; bottom: 8px; }
+  .hero-peacock { width: 200px; right: -10px; bottom: -10px; }
   .hero-left { padding: 60px 24px; }
   .hero-stats-strip { flex-direction: column; }
   .hero-stat-col { border-left: none; border-top: 1px solid var(--amber-border); }
