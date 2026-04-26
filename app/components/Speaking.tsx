@@ -21,9 +21,14 @@ const talks = [
   },
 ]
 
+import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
+
 export default function Speaking() {
   return (
     <section id="speaking" className="speaking-section">
+      <PeacockCorner />
+      <FeatherBg />
       <div className="section-label">Speaking</div>
       <h2 className="section-title">
         On stage &amp;<br /><em>on record.</em>

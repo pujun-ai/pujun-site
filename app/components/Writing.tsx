@@ -41,9 +41,14 @@ const posts = [
   },
 ]
 
+import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
+
 export default function Writing() {
   return (
     <section id="writing" className="writing-section">
+      <PeacockCorner />
+      <FeatherBg />
       <div className="writing-header">
         <div className="section-label">Writing</div>
         <h2 className="section-title">
