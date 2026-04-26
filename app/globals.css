@@ -126,6 +126,7 @@ nav.scrolled {
   padding-top: 90px;
   background: var(--indigo);
   overflow: hidden;
+  position: relative;
 }
 
 .hero-left {
@@ -815,6 +816,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--amber-border);
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-copy {
@@ -946,6 +949,7 @@ footer {
 }
 
 /* Dark sections (indigo background) — peacock in turquoise */
+.hero               .peacock-corner,
 .experience-section .peacock-corner,
 .photos-section     .peacock-corner {
   color: var(--amber-light);
@@ -1009,6 +1013,36 @@ footer {
   transform: rotate(8deg) scaleX(-1);
   color: var(--indigo);
   opacity: 0.055;
+}
+
+/* Hero — feather in left column, lower-right, large and atmospheric */
+.hero-left .feather-bg {
+  bottom: -60px;
+  right: -80px;
+  width: 340px;
+  transform: rotate(-18deg);
+  color: var(--amber-light);
+  opacity: 0.06;
+}
+
+/* Photos — feather on the right, rising upward */
+.photos-section .feather-bg {
+  top: -30px;
+  right: -40px;
+  width: 260px;
+  transform: rotate(-8deg);
+  color: var(--amber-light);
+  opacity: 0.07;
+}
+
+/* Footer — feather centered behind content */
+footer .feather-bg {
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(5deg);
+  width: 160px;
+  color: var(--amber-light);
+  opacity: 0.06;
 }
 
 /* ─── FOOTER DIYA ───────────────────────────────────────────────────────── */

@@ -1,6 +1,9 @@
+import FeatherBg from './FeatherBg'
+
 export default function Footer() {
   return (
     <footer>
+      <FeatherBg />
       <div className="footer-copy">© 2026 Pujun Bhatnagar</div>
       {/* Peacock — India's national bird */}
       <div className="footer-diya" aria-hidden="true">

@@ -1,7 +1,12 @@
+import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
+
 export default function Hero() {
   return (
     <section className="hero">
+      <PeacockCorner />
       <div className="hero-left">
+        <FeatherBg />
         <div className="hero-eyebrow">San Francisco &nbsp;·&nbsp; Delhi</div>
         <h1 className="hero-name">
           Pujun<br />

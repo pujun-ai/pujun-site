@@ -27,11 +27,13 @@ const photos = [
 ]
 
 import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
 
 export default function Photos() {
   return (
     <section className="photos-section" id="photos">
       <PeacockCorner />
+      <FeatherBg />
       <div className="section-label">Team <span className="section-label-jp">टीम</span></div>
       <h2 className="section-title" style={{ maxWidth: '600px' }}>
         The team that crossed an ocean.<br />
