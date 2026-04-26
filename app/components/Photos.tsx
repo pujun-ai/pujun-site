@@ -26,9 +26,12 @@ const photos = [
   },
 ]
 
+import PeacockCorner from './PeacockCorner'
+
 export default function Photos() {
   return (
     <section className="photos-section" id="photos">
+      <PeacockCorner />
       <div className="section-label">Team <span className="section-label-jp">टीम</span></div>
       <h2 className="section-title" style={{ maxWidth: '600px' }}>
         The team that crossed an ocean.<br />

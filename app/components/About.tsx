@@ -1,6 +1,11 @@
+import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
+
 export default function About() {
   return (
     <section id="about" className="about-section">
+      <PeacockCorner />
+      <FeatherBg />
       <div className="section-label">About <span className="section-label-jp">परिचय</span></div>
       <div className="about-grid">
         <div className="about-text">

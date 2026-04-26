@@ -876,6 +876,7 @@ footer {
     radial-gradient(circle, rgba(255, 179, 0, 0.08) 1px, transparent 1px);
   background-size: 28px 28px, 28px 28px;
   background-position: 0 0, 14px 14px;
+  position: relative;
 }
 
 .now-list {
@@ -921,6 +922,93 @@ footer {
   letter-spacing: 0.03em;
   text-transform: none;
   font-weight: 400;
+}
+
+/* ─── PEACOCK CORNER DECORATION ─────────────────────────────────────────── */
+/* Small peacock silhouette pinned to the top-right of each section          */
+.peacock-corner {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  width: 72px;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Light sections (canvas/ivory background) — peacock in deep teal */
+.about-section   .peacock-corner,
+.now-section     .peacock-corner,
+.speaking-section .peacock-corner,
+.writing-section .peacock-corner {
+  color: var(--indigo);
+  opacity: 0.10;
+}
+
+/* Dark sections (indigo background) — peacock in turquoise */
+.experience-section .peacock-corner,
+.photos-section     .peacock-corner {
+  color: var(--amber-light);
+  opacity: 0.14;
+}
+
+/* ─── FEATHER BACKGROUND DECORATION ─────────────────────────────────────── */
+/* Large zentangle feather watermark behind section content                  */
+.feather-bg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+/* About — feather on the far right, gently tilted */
+.about-section .feather-bg {
+  top: 40px;
+  right: -50px;
+  width: 280px;
+  transform: rotate(-14deg);
+  color: var(--indigo);
+  opacity: 0.055;
+}
+
+/* Now — feather in lower-right, opposite tilt */
+.now-section .feather-bg {
+  bottom: -30px;
+  right: 20px;
+  width: 240px;
+  transform: rotate(12deg);
+  color: var(--indigo);
+  opacity: 0.06;
+}
+
+/* Experience — feather in lower-left, mirrored */
+.experience-section .feather-bg {
+  bottom: 40px;
+  left: -40px;
+  width: 260px;
+  transform: rotate(6deg) scaleX(-1);
+  color: var(--amber-light);
+  opacity: 0.07;
+}
+
+/* Speaking — feather upper-right */
+.speaking-section .feather-bg {
+  top: 20px;
+  right: -30px;
+  width: 220px;
+  transform: rotate(-10deg);
+  color: var(--indigo);
+  opacity: 0.055;
+}
+
+/* Writing — feather lower-left, mirrored */
+.writing-section .feather-bg {
+  bottom: 0;
+  left: -20px;
+  width: 240px;
+  transform: rotate(8deg) scaleX(-1);
+  color: var(--indigo);
+  opacity: 0.055;
 }
 
 /* ─── FOOTER DIYA ───────────────────────────────────────────────────────── */
