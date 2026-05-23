@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -494,6 +495,7 @@ section {
 .about-section {
   background: var(--canvas);
   position: relative;
+  overflow: hidden;
   /* Subtle dot-grid — looks like a worn field notebook or Leuchtturm1917     */
   background-image: radial-gradient(circle, rgba(140, 102, 53, 0.1) 1px, transparent 1px);
   background-size: 28px 28px;
@@ -592,6 +594,7 @@ section {
 .experience-section {
   background: var(--indigo);
   position: relative;
+  overflow: hidden;
 }
 
 .experience-section .section-label { color: var(--amber-light); }
@@ -1085,9 +1088,9 @@ footer .peacock-accent {
   footer { padding: 28px 24px; flex-direction: column; gap: 8px; text-align: center; }
 
   /* Peacock watermarks — scaled down on mobile */
-  .about-section .feather-bg    { width: 180px; right: -15px; bottom: -20px; }
-  .now-section .feather-bg      { width: 120px; left: -10px;  bottom: -10px; }
-  .experience-section .feather-bg { width: 160px; right: -10px; top: auto; bottom: 20px; transform: rotate(5deg); }
+  .about-section .feather-bg    { width: 180px; right: 0; bottom: 0; }
+  .now-section .feather-bg      { width: 120px; left: 0;  bottom: 0; }
+  .experience-section .feather-bg { width: 160px; right: 0; top: auto; bottom: 20px; transform: rotate(5deg); }
   .photos-section .feather-bg   { width: 140px; left: -10px;  bottom: -15px; }
   footer .feather-bg            { width: 70px; }
 
