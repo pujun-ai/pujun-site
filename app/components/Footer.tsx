@@ -1,11 +1,12 @@
 import FeatherBg from './FeatherBg'
+import PeacockAccent from './PeacockAccent'
 
 export default function Footer() {
   return (
     <footer>
       <FeatherBg />
       <div className="footer-copy">© 2026 Pujun Bhatnagar</div>
-      <div className="footer-kanji">ॐ</div>
+      <PeacockAccent />
       <div className="footer-icons">
         <a href="mailto:pujun@trykintsugi.com" aria-label="Email" className="footer-icon-link">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

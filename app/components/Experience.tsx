@@ -39,12 +39,14 @@ const education = [
 ]
 
 import PeacockCorner from './PeacockCorner'
+import PeacockAccent from './PeacockAccent'
 import FeatherBg from './FeatherBg'
 
 export default function Experience() {
   return (
     <section id="experience" className="experience-section">
       <PeacockCorner />
+      <PeacockAccent mirror />
       <FeatherBg />
       <div className="section-label">Experience <span className="section-label-jp">अनुभव</span></div>
       <h2 className="section-title">
