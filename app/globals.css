@@ -970,11 +970,61 @@ footer {
 }
 
 /* ─── FOOTER OM ─────────────────────────────────────────────────────────── */
-.footer-kanji {
-  font-family: var(--font-noto-jp), serif;
-  font-size: 20px;
-  color: rgba(13, 115, 119, 0.35);
+/* ─── PEACOCK ACCENT (extra small scattered peacocks) ───────────────────── */
+.peacock-accent {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
   user-select: none;
+}
+
+.peacock-accent--mirror {
+  transform: scaleX(-1);
+}
+
+/* Hero left — bottom-right of text column */
+.hero-left .peacock-accent {
+  bottom: 24px;
+  right: 24px;
+  width: 42px;
+  color: var(--amber-light);
+  opacity: 0.18;
+}
+
+/* About — bottom-left, mirrored */
+.about-section > .peacock-accent {
+  bottom: 36px;
+  left: 32px;
+  width: 52px;
+  color: var(--peacock);
+  opacity: 0.11;
+}
+
+/* Now — bottom-right (below corner which is top-right) */
+.now-section > .peacock-accent {
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  color: var(--peacock);
+  opacity: 0.11;
+}
+
+/* Experience — bottom-left, mirrored */
+.experience-section > .peacock-accent {
+  bottom: 36px;
+  left: 32px;
+  width: 50px;
+  color: var(--amber-light);
+  opacity: 0.16;
+}
+
+/* Footer — replaces ॐ, sits between copyright and icons */
+footer .peacock-accent {
+  position: static;
+  display: block;
+  width: 32px;
+  color: var(--peacock);
+  opacity: 0.45;
 }
 
 /* ─── ANIMATIONS ────────────────────────────────────────────────────────── */

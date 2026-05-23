@@ -8,12 +8,14 @@ const items = [
 ]
 
 import PeacockCorner from './PeacockCorner'
+import PeacockAccent from './PeacockAccent'
 import FeatherBg from './FeatherBg'
 
 export default function Now() {
   return (
     <section id="now" className="now-section">
       <PeacockCorner />
+      <PeacockAccent />
       <FeatherBg />
       <div className="section-label">
         Now <span className="section-label-jp">अभी</span>

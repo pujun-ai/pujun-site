@@ -1,3 +1,5 @@
+import PeacockAccent from './PeacockAccent'
+
 export default function Hero() {
   return (
     <section className="hero">
@@ -14,6 +16,7 @@ export default function Hero() {
         <div className="hero-ctas">
           <a href="#about" className="btn-primary">Read more ↓</a>
         </div>
+        <PeacockAccent mirror />
       </div>
 
       <div className="hero-right">
