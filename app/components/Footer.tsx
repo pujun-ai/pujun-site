@@ -1,6 +1,9 @@
+import FeatherBg from './FeatherBg'
+
 export default function Footer() {
   return (
     <footer>
+      <FeatherBg />
       <div className="footer-copy">© 2026 Pujun Bhatnagar</div>
       <div className="footer-kanji">ॐ</div>
       <div className="footer-icons">

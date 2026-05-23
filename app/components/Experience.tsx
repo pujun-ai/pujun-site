@@ -38,9 +38,14 @@ const education = [
   },
 ]
 
+import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
+
 export default function Experience() {
   return (
     <section id="experience" className="experience-section">
+      <PeacockCorner />
+      <FeatherBg />
       <div className="section-label">Experience <span className="section-label-jp">अनुभव</span></div>
       <h2 className="section-title">
         Things I&apos;ve<br /><em>worked on.</em>

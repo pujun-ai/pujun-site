@@ -7,9 +7,14 @@ const items = [
   { label: 'Reading',    value: 'What I Talk About When I Talk About Running — Murakami' },
 ]
 
+import PeacockCorner from './PeacockCorner'
+import FeatherBg from './FeatherBg'
+
 export default function Now() {
   return (
     <section id="now" className="now-section">
+      <PeacockCorner />
+      <FeatherBg />
       <div className="section-label">
         Now <span className="section-label-jp">अभी</span>
       </div>
