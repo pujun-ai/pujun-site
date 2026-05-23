@@ -285,19 +285,18 @@ nav.scrolled {
 }
 
 /* Large faded Om symbol behind photo — ॐ (om) = the beginning */
-.hero-kanji {
+.hero-peacock {
   position: absolute;
-  font-family: var(--font-noto-jp), serif;
-  font-size: 280px;
-  font-weight: 400;
+  width: 420px;
   color: var(--canvas);
-  opacity: 0.055;
+  opacity: 0.13;
   user-select: none;
   pointer-events: none;
-  line-height: 1;
-  right: 24px;
-  bottom: 16px;
+  right: -30px;
+  bottom: -20px;
   z-index: 0;
+  animation: peacockShimmer 10s ease-in-out infinite;
+  transform-origin: bottom right;
 }
 
 .hero-photo {
@@ -930,6 +929,12 @@ footer {
   to   { transform: translateX(0); opacity: 1; }
 }
 
+@keyframes peacockShimmer {
+  0%   { opacity: 0.10; transform: scale(1);    }
+  50%  { opacity: 0.20; transform: scale(1.03); }
+  100% { opacity: 0.10; transform: scale(1);    }
+}
+
 /* ─── RESPONSIVE ────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   nav { padding: 20px 24px; }
@@ -938,7 +943,7 @@ footer {
   .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
   .hero-right { padding: 40px 24px; min-height: 340px; }
   .hero-photo-outer { width: min(220px, 65vw); }
-  .hero-kanji { font-size: 160px; right: 12px; bottom: 8px; }
+  .hero-peacock { width: 200px; right: -10px; bottom: -10px; }
   .hero-left { padding: 60px 24px; }
   .hero-stats-strip { flex-direction: column; }
   .hero-stat-col { border-left: none; border-top: 1px solid var(--amber-border); }
