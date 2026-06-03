@@ -17,6 +17,7 @@ export default function Hero() {
           <a href="#about" className="btn-primary">Read more ↓</a>
         </div>
         <PeacockAccent mirror />
+        <PeacockAccent className="pa-hero-tl" />
       </div>
 
       <div className="hero-right">

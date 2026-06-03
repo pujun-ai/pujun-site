@@ -1030,6 +1030,79 @@ footer .peacock-accent {
   opacity: 0.45;
 }
 
+/* ─── EXTRA SCATTERED PEACOCKS (7 additional) ──────────────────────────── */
+
+/* Hero — top-left of text column */
+.pa-hero-tl {
+  top: 80px;
+  left: 20px;
+  width: 34px;
+  color: var(--amber-light);
+  opacity: 0.13;
+}
+
+/* About — top-left */
+.pa-about-tl {
+  top: 100px;
+  left: 28px;
+  width: 40px;
+  color: var(--peacock);
+  opacity: 0.09;
+}
+
+/* About — mid-right, above the facts panel */
+.pa-about-mr {
+  top: 38%;
+  right: 28px;
+  width: 58px;
+  color: var(--amber-light);
+  opacity: 0.08;
+}
+
+/* Now — top-left, mirrored */
+.pa-now-tl {
+  top: 90px;
+  left: 28px;
+  width: 36px;
+  color: var(--amber);
+  opacity: 0.10;
+}
+
+/* Now — bottom centre-right */
+.pa-now-br {
+  bottom: 60px;
+  right: 200px;
+  width: 46px;
+  color: var(--peacock);
+  opacity: 0.09;
+}
+
+/* Experience — top-left, mirrored */
+.pa-exp-tl {
+  top: 60px;
+  left: 36px;
+  width: 60px;
+  color: var(--amber-light);
+  opacity: 0.14;
+}
+
+/* Experience — mid-left */
+.pa-exp-ml {
+  top: 52%;
+  left: 20px;
+  width: 44px;
+  color: var(--peacock);
+  opacity: 0.10;
+}
+
+/* On mobile hide the extras that would crowd narrow screens */
+@media (max-width: 768px) {
+  .pa-hero-tl,
+  .pa-about-mr,
+  .pa-now-br,
+  .pa-exp-ml { display: none; }
+}
+
 /* ─── ANIMATIONS ────────────────────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }

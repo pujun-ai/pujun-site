@@ -121,9 +121,9 @@ m559 -248 c69 -43 89 -81 85 -156 -6 -107 -78 -171 -184 -162 -122 10 -197
   </g>
 )
 
-export default function PeacockAccent({ mirror = false }: { mirror?: boolean }) {
+export default function PeacockAccent({ mirror = false, className = '' }: { mirror?: boolean, className?: string }) {
   return (
-    <div className={`peacock-accent${mirror ? ' peacock-accent--mirror' : ''}`} aria-hidden="true">
+    <div className={`peacock-accent${mirror ? ' peacock-accent--mirror' : ''}${className ? ' ' + className : ''}`} aria-hidden="true">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 502.288832 550.905077"
         preserveAspectRatio="xMidYMid meet">

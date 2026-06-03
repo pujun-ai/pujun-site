@@ -47,6 +47,8 @@ export default function Experience() {
     <section id="experience" className="experience-section">
       <PeacockCorner />
       <PeacockAccent mirror />
+      <PeacockAccent mirror className="pa-exp-tl" />
+      <PeacockAccent className="pa-exp-ml" />
       <FeatherBg />
       <div className="section-label">Experience <span className="section-label-jp">अनुभव</span></div>
       <h2 className="section-title">

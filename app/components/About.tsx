@@ -7,6 +7,8 @@ export default function About() {
     <section id="about" className="about-section">
       <PeacockCorner />
       <PeacockAccent mirror />
+      <PeacockAccent className="pa-about-tl" />
+      <PeacockAccent mirror className="pa-about-mr" />
       <FeatherBg />
       <div className="section-label">About <span className="section-label-jp">परिचय</span></div>
       <div className="about-grid">
