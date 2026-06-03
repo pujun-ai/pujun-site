@@ -16,6 +16,8 @@ export default function Now() {
     <section id="now" className="now-section">
       <PeacockCorner />
       <PeacockAccent />
+      <PeacockAccent mirror className="pa-now-tl" />
+      <PeacockAccent className="pa-now-br" />
       <FeatherBg />
       <div className="section-label">
         Now <span className="section-label-jp">अभी</span>
