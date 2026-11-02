@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
+import Delhi from './components/Delhi'
 import Experience from './components/Experience'
 import Now from './components/Now'
 import Footer from './components/Footer'
@@ -11,6 +12,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <About />
+      <Delhi />
       <Now />
       <Experience />
       <Footer />
